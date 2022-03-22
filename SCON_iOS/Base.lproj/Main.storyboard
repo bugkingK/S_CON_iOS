@@ -103,6 +103,38 @@
             </objects>
             <point key="canvasLocation" x="1275" y="98"/>
         </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="Ydw-62-fVg">
+            <objects>
+                <viewController id="TqX-0X-6nD" customClass="LaunchViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NYL-AU-TZp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gv-gS-24n" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="afI-qy-gnz"/>
+                                    <constraint firstAttribute="width" constant="300" id="zF7-eK-RCd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8cZ-OD-mtu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9gv-gS-24n" firstAttribute="centerY" secondItem="NYL-AU-TZp" secondAttribute="centerY" id="Ugi-iq-VGj"/>
+                            <constraint firstItem="9gv-gS-24n" firstAttribute="centerX" secondItem="NYL-AU-TZp" secondAttribute="centerX" id="jbu-U8-612"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lottieView" destination="9gv-gS-24n" id="PcC-Xf-mDI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDi-sS-cZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1555" y="98"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="vZk-t8-CBN">
             <objects>
