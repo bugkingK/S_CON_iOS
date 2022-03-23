@@ -32,12 +32,16 @@ PODS:
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
+  - Pageboy (3.6.2)
   - PromisesObjC (2.0.0)
+  - Tabman (2.12.0):
+    - Pageboy (~> 3.6.0)
 
 DEPENDENCIES:
   - Firebase/Database
   - Kingfisher
   - lottie-ios
+  - Tabman (~> 2.12)
 
 SPEC REPOS:
   trunk:
@@ -51,7 +55,9 @@ SPEC REPOS:
     - leveldb-library
     - lottie-ios
     - nanopb
+    - Pageboy
     - PromisesObjC
+    - Tabman
 
 SPEC CHECKSUMS:
   Firebase: ee9b1d9b1801371e29f5591eda89eb5a314ab599
@@ -64,8 +70,10 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  Tabman: 447a50447ed2869c39ab3b1a779327e43e067c4e
 
-PODFILE CHECKSUM: a3095f0424eba9ae2591ff3b79dde68439ed54c9
+PODFILE CHECKSUM: 3a0e59bc53021f90b2587094ba0eac99cffe0de5
 
 COCOAPODS: 1.10.2

@@ -9,5 +9,6 @@ target 'SCON_iOS' do
   pod 'lottie-ios'
   pod 'Firebase/Database'
   pod 'Kingfisher'
+  pod 'Tabman', '~> 2.12'
 
 end
