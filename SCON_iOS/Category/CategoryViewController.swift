@@ -39,7 +39,7 @@ class CategoryViewController: TabmanViewController {
     }
 
 }
-//MARK: - TabmanViewController : DataSource
+//MARK: - TabmanVC- DataSource
 extension CategoryViewController: PageboyViewControllerDataSource, TMBarDataSource{
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
             let item = TMBarItem(title: "")
@@ -59,6 +59,5 @@ extension CategoryViewController: PageboyViewControllerDataSource, TMBarDataSour
         func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
             return nil
         }
-    
     
 }
