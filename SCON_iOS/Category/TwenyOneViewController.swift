@@ -7,21 +7,23 @@
 
 import UIKit
 
-class TwenyOneViewController: UIViewController {
 
+
+class TwenyOneViewController: UIViewController {
     
+    let headerList = ["대상", "금상", "은상", "동상", "장려상", "인기상"]
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.title = "수상작"
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.dataSource = self
         collectionView.delegate = self
         self.collectionView.collectionViewLayout = createLayout()
-        //헤더 설정
-//        collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
-        
+        //값 넣기
     }
     
     
@@ -37,28 +39,28 @@ extension TwenyOneViewController {
         let layout = UICollectionViewCompositionalLayout{
             (sectionIndex: Int, layoutEnvironMent: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             //아이템 사이즈
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalHeight(1.0))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.9))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             //아이템 간 간격 설정
-            item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 5, bottom: 5, trailing: 5)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5)
             
             //그룹 사이즈
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(160))
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(200))
             // 그룹 만들기
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
             // 그룹으로 섹션 만들기
             let section = NSCollectionLayoutSection(group: group)
             //섹션에 대한 간격 설정
-            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 20, bottom: 20, trailing: 20)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 20)
             section.orthogonalScrollingBehavior = .continuous
             
-            
+            //섹션 헤더 설정
             let titleSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                  heightDimension: .estimated(40))
+                                                  heightDimension: .estimated(30))
             let titleSupplementary = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: titleSize,
                 elementKind: UICollectionView.elementKindSectionHeader,
-                alignment: .top)
+                alignment: .topLeading)
             section.boundarySupplementaryItems = [titleSupplementary]
             return section
             
@@ -70,10 +72,11 @@ extension TwenyOneViewController {
 
 //MARK: - UICollectionViewDataSource
 extension TwenyOneViewController: UICollectionViewDataSource{
+    //섹션 당 보여질 셀의 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
-    
+    //콜렉션 뷰 셀 설정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WorkCollectionViewCell", for: indexPath) as? WorkCollectionViewCell else { return UICollectionViewCell() }
         cell.imageView.image = UIImage(systemName: "rectangle.and.pencil.and.ellipsis")
@@ -88,34 +91,27 @@ extension TwenyOneViewController: UICollectionViewDataSource{
         cell.layer.masksToBounds = false
         return cell
     }
+    //섹션의 개수 설정
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return headerList.count
+    }
+    
     //섹션의 헤더 사용하기 위해 구현
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-          // 1
-          case UICollectionView.elementKindSectionHeader:
-            // 2
-            let headerView = collectionView.dequeueReusableSupplementaryView(
-              ofKind: kind,
-              withReuseIdentifier: "HeaderCollectionReusableView",
-              for: indexPath)
-
-            // 3
-            guard let typedHeaderView = headerView as? HeaderCollectionReusableView
-            else { return headerView }
-
-            // 4
-            typedHeaderView.titleLabel.text = "수상별 목록"
-            return typedHeaderView
-          default:
-            // 5
-            assert(false, "Invalid element type")
-          }
+        if kind == UICollectionView.elementKindSectionHeader{
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as? HeaderCollectionReusableView else { fatalError("Could not dequeue Header") }
+            headerView.titleLabel.text = headerList[indexPath.row]
+            return headerView
+        } else {
+            return UICollectionReusableView()
+        }
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        let width: CGFloat = collectionView.frame.width
-//        let height: CGFloat = 20
-//        return CGSize(width: width, height: height)
-//    }
+    //섹션의 헤더 사이즈 설정
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let width: CGFloat = collectionView.frame.width
+        let height: CGFloat = 30
+        return CGSize(width: width, height: height)
+    }
 
 
    
@@ -125,5 +121,11 @@ extension TwenyOneViewController: UICollectionViewDataSource{
 
 //MARK: - UICollectionViewDelegate
 extension TwenyOneViewController: UICollectionViewDelegate{
-    
+    //셀 선택시 동작
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let detailVC = storyboard.instantiateViewController(withIdentifier: "detailVC") as? DetailViewController else { return }
+        //카테고리 VC로 값 전달할 코드
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
