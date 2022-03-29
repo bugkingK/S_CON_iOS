@@ -369,9 +369,6 @@ It is a long established fact that a reader will be distracted by the readable c
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
-                    <connections>
-                        <outlet property="description" destination="Sw8-21-5fA" id="2iJ-ZT-6p8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkc-Pl-IBr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
