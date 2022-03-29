@@ -17,10 +17,10 @@ extension UIViewController{
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(0.9))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             //아이템 간 간격 설정
-            item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
             
             //그룹 사이즈
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200))
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(180))
             // 그룹 만들기
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
             // 그룹으로 섹션 만들기
@@ -41,5 +41,16 @@ extension UIViewController{
             
         }
         return layout
+    }
+}
+
+extension UIStackView{
+    func makeBackground() {
+        backgroundColor = .yellow
+        layer.cornerRadius = 20
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = CGSize(width: 5, height: 5)
+        layer.shadowRadius = 2
+        layer.shadowOpacity = 0.7
     }
 }

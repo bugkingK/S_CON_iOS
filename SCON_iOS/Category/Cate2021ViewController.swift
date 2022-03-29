@@ -16,6 +16,7 @@ struct Data{
     let title: String
     let discription: String
     let photo: UIImage?
+    
 }
 
 
@@ -35,16 +36,18 @@ class Cate2021ViewController: UIViewController {
         collectionView.delegate = self
         
         //데이터 추가
-        arrData.append(Header(header: "헤더 1", dataList: [Data(title: "BOOKREST", discription: "dis1", photo: UIImage(systemName: "house")),
+        arrData.append(Header(header: "대상", dataList: [Data(title: "BOOKREST", discription: "교내 전공 서적 서비스", photo: UIImage(named: "main")),
                                                        Data(title: "title2", discription: "dis2", photo: UIImage(systemName: "house")),
                                                          Data(title: "title3", discription: "dis2", photo: UIImage(systemName: "house"))]))
-        arrData.append(Header(header: "헤더 2", dataList: [Data(title: "h1", discription: "d2", photo: UIImage(systemName: "house")),
+        arrData.append(Header(header: "금상", dataList: [Data(title: "h1", discription: "d2", photo: UIImage(systemName: "house")),
                                                        Data(title: "32", discription: "d1", photo: UIImage(systemName: "house"))]))
         
         
         self.collectionView.collectionViewLayout = createLayout()
         
     }
+    
+    
 
     
 }
@@ -75,13 +78,18 @@ extension Cate2021ViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader{
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as? HeaderCollectionReusableView else { fatalError("Could not dequeue Header") }
-            headerView.titleLabel.text = arrData[indexPath.section].header
+            headerView.titleLabel.text = self.arrData[indexPath.section].header
             return headerView
         } else {
             return UICollectionReusableView()
         }
     }
-
+//    //섹션의 헤더 사이즈 설정
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        let width: CGFloat = collectionView.frame.width
+//        let height: CGFloat = 20
+//        return CGSize(width: width, height: height)
+//    }
 
 
    
@@ -96,6 +104,7 @@ extension Cate2021ViewController: UICollectionViewDelegate{
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let detailVC = storyboard.instantiateViewController(withIdentifier: "detailVC") as? DetailViewController else { return }
         //카테고리 VC로 값 전달할 코드
+        detailVC.navTitle = self.arrData[indexPath.section].dataList[indexPath.row].title
         
         self.navigationController?.pushViewController(detailVC, animated: true)
     }

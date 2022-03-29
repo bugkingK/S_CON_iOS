@@ -10,5 +10,7 @@ target 'SCON_iOS' do
   pod 'Firebase/Database'
   pod 'Kingfisher'
   pod 'Tabman', '~> 2.12'
+  pod "youtube-ios-player-helper"
+
 
 end
