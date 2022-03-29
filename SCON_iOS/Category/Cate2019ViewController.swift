@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NineteenViewController: UIViewController {
+class Cate2019ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

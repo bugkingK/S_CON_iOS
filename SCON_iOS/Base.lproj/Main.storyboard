@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="513" y="817"/>
         </scene>
-        <!--Tweny One View Controller-->
+        <!--Cate2021 View Controller-->
         <scene sceneID="dgt-aZ-lqb">
             <objects>
-                <viewController storyboardIdentifier="TwenyOneViewController" id="aRM-h4-cU8" customClass="TwenyOneViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TwenyOneViewController" id="aRM-h4-cU8" customClass="Cate2021ViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b3K-yi-lOf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,22 +374,13 @@ It is a long established fact that a reader will be distracted by the readable c
             </objects>
             <point key="canvasLocation" x="1227.536231884058" y="1593.75"/>
         </scene>
-        <!--Twenty View Controller-->
+        <!--Cate2020 View Controller-->
         <scene sceneID="bCg-TH-r7A">
             <objects>
-                <viewController storyboardIdentifier="TwentyViewController" id="6Bp-QA-sax" customClass="TwentyViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TwentyViewController" id="6Bp-QA-sax" customClass="Cate2020ViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zHk-5S-Tdf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwN-VB-HGY">
-                                <rect key="frame" x="154" y="430" width="106" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MJE-es-fyU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -398,10 +389,10 @@ It is a long established fact that a reader will be distracted by the readable c
             </objects>
             <point key="canvasLocation" x="1970" y="817"/>
         </scene>
-        <!--Nineteen View Controller-->
+        <!--Cate2019 View Controller-->
         <scene sceneID="2Yn-Sl-bH3">
             <objects>
-                <viewController storyboardIdentifier="NineteenViewController" id="AzT-FN-VVd" customClass="NineteenViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NineteenViewController" id="AzT-FN-VVd" customClass="Cate2019ViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mZS-dn-reH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

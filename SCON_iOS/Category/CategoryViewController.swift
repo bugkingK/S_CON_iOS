@@ -17,9 +17,9 @@ class CategoryViewController: TabmanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.navigationItem.title = "수상작들"
-        let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwenyOneViewController") as! TwenyOneViewController
-        let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwentyViewController") as! TwentyViewController
-        let vc3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NineteenViewController") as! NineteenViewController
+        let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwenyOneViewController") as! Cate2021ViewController
+        let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwentyViewController") as! Cate2020ViewController
+        let vc3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NineteenViewController") as! Cate2019ViewController
         viewControllers.append(vc1)
         viewControllers.append(vc2)
         viewControllers.append(vc3)

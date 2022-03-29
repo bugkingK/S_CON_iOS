@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TwentyViewController: UIViewController {
+class Cate2020ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
