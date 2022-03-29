@@ -16,7 +16,7 @@ class CategoryViewController: TabmanViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "수상작들"
+//        self.navigationItem.title = "수상작들"
         let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwenyOneViewController") as! TwenyOneViewController
         let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwentyViewController") as! TwentyViewController
         let vc3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NineteenViewController") as! NineteenViewController
