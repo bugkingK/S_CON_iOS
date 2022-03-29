@@ -12,7 +12,6 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.left.2.circle"), style: .done, target: self, action: #selector(homeTapped))
-        // Do any additional setup after loading the view.
     }
     
     @objc func homeTapped(sender: UIBarButtonItem) {

@@ -35,8 +35,9 @@ class TwenyOneViewController: UIViewController {
         collectionView.delegate = self
         
         //데이터 추가
-        arrData.append(Header(header: "헤더 1", dataList: [Data(title: "title1", discription: "dis1", photo: UIImage(systemName: "house")),
-                                                       Data(title: "title2", discription: "dis2", photo: UIImage(systemName: "house"))]))
+        arrData.append(Header(header: "헤더 1", dataList: [Data(title: "BOOKREST", discription: "dis1", photo: UIImage(systemName: "house")),
+                                                       Data(title: "title2", discription: "dis2", photo: UIImage(systemName: "house")),
+                                                         Data(title: "title3", discription: "dis2", photo: UIImage(systemName: "house"))]))
         arrData.append(Header(header: "헤더 2", dataList: [Data(title: "h1", discription: "d2", photo: UIImage(systemName: "house")),
                                                        Data(title: "32", discription: "d1", photo: UIImage(systemName: "house"))]))
         
@@ -63,16 +64,16 @@ extension TwenyOneViewController {
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(0.9))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             //아이템 간 간격 설정
-            item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
             
             //그룹 사이즈
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(200))
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200))
             // 그룹 만들기
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
             // 그룹으로 섹션 만들기
             let section = NSCollectionLayoutSection(group: group)
             //섹션에 대한 간격 설정
-            section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 20)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 10, bottom: 0, trailing: 10)
             section.orthogonalScrollingBehavior = .continuous
             
             //섹션 헤더 설정
@@ -121,12 +122,12 @@ extension TwenyOneViewController: UICollectionViewDataSource{
             return UICollectionReusableView()
         }
     }
-    //섹션의 헤더 사이즈 설정
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let width: CGFloat = collectionView.frame.width
-        let height: CGFloat = 30
-        return CGSize(width: width, height: height)
-    }
+//    //섹션의 헤더 사이즈 설정
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        let width: CGFloat = collectionView.frame.width
+//        let height: CGFloat = 20
+//        return CGSize(width: width, height: height)
+//    }
 
 
    
@@ -141,6 +142,7 @@ extension TwenyOneViewController: UICollectionViewDelegate{
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let detailVC = storyboard.instantiateViewController(withIdentifier: "detailVC") as? DetailViewController else { return }
         //카테고리 VC로 값 전달할 코드
+        
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
