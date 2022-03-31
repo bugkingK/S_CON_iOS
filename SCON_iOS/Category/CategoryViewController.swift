@@ -16,7 +16,9 @@ class CategoryViewController: TabmanViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationItem.title = "수상작들"
+        self.navigationItem.title = "수상작들"
+        self.navigationController?.customNavigation()
+
         let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwenyOneViewController") as! Cate2021ViewController
         let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwentyViewController") as! Cate2020ViewController
         let vc3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NineteenViewController") as! Cate2019ViewController
@@ -36,10 +38,10 @@ class CategoryViewController: TabmanViewController {
         //인디케이터 조정
         bar.indicator.weight = .light
         bar.indicator.overscrollBehavior = .compress
-        bar.indicator.tintColor = .gray
+        bar.indicator.tintColor = UIColor(named: "darkYellow")
         bar.buttons.customize { button in
-            button.tintColor = .black
-            button.selectedTintColor = .yellow
+            button.tintColor = .darkGray
+            button.selectedTintColor = UIColor(named: "darkYellow")
         }
         // Add to view
         addBar(bar, dataSource: self, at: .top)
