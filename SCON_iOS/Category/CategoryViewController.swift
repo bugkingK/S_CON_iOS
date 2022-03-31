@@ -29,11 +29,18 @@ class CategoryViewController: TabmanViewController {
         // Create bar
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .snap // Customize
-        bar.layout.contentInset = UIEdgeInsets(top: 0, left: 20.0, bottom: 0.0, right: 20.0)
+        bar.layout.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 10.0, right: 10)
         bar.backgroundView.style = .blur(style: .regular) //투명해짐
         bar.indicator.overscrollBehavior = .bounce //인디케이터 설정
         bar.layout.contentMode = .fit //탭바의 크기에 맞춰서
-
+        //인디케이터 조정
+        bar.indicator.weight = .light
+        bar.indicator.overscrollBehavior = .compress
+        bar.indicator.tintColor = .gray
+        bar.buttons.customize { button in
+            button.tintColor = .black
+            button.selectedTintColor = .yellow
+        }
         // Add to view
         addBar(bar, dataSource: self, at: .top)
     }

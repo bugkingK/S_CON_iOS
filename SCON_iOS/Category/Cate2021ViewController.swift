@@ -7,19 +7,6 @@
 
 import UIKit
 
-struct Header {
-    let header: String
-    let dataList: [Data]
-}
-
-struct Data{
-    let title: String
-    let discription: String
-    let photo: UIImage?
-    
-}
-
-
 
 class Cate2021ViewController: UIViewController {
     

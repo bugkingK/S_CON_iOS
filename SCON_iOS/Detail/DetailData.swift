@@ -31,3 +31,15 @@ enum DEPARTMENT: String{
     case MEDIA
     case IT
 }
+
+struct Header {
+    let header: String
+    let dataList: [Data]
+}
+
+struct Data{
+    let title: String
+    let discription: String
+    let photo: UIImage?
+    
+}

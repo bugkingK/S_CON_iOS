@@ -44,7 +44,7 @@ extension UIViewController{
     }
 }
 
-extension UIStackView{
+extension UIView{
     func makeBackground() {
         backgroundColor = .yellow
         layer.cornerRadius = 20
