@@ -1,19 +1,19 @@
 PODS:
-  - Firebase/CoreOnly (8.13.0):
-    - FirebaseCore (= 8.13.0)
-  - Firebase/Database (8.13.0):
+  - Firebase/CoreOnly (8.14.0):
+    - FirebaseCore (= 8.14.0)
+  - Firebase/Database (8.14.0):
     - Firebase/CoreOnly
-    - FirebaseDatabase (~> 8.13.0)
-  - FirebaseCore (8.13.0):
+    - FirebaseDatabase (~> 8.14.0)
+  - FirebaseCore (8.14.0):
     - FirebaseCoreDiagnostics (~> 8.0)
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/Logger (~> 7.7)
-  - FirebaseCoreDiagnostics (8.13.0):
+  - FirebaseCoreDiagnostics (8.14.0):
     - GoogleDataTransport (~> 9.1)
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/Logger (~> 7.7)
     - nanopb (~> 2.30908.0)
-  - FirebaseDatabase (8.13.0):
+  - FirebaseDatabase (8.14.0):
     - FirebaseCore (~> 8.0)
     - leveldb-library (~> 1.22)
   - GoogleDataTransport (9.1.2):
@@ -24,6 +24,7 @@ PODS:
     - PromisesObjC (< 3.0, >= 1.2)
   - GoogleUtilities/Logger (7.7.0):
     - GoogleUtilities/Environment
+  - JJFloatingActionButton (2.5.0)
   - Kingfisher (7.2.0)
   - leveldb-library (1.22.1)
   - lottie-ios (3.3.0)
@@ -40,6 +41,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Database
+  - JJFloatingActionButton
   - Kingfisher
   - lottie-ios
   - Tabman (~> 2.12)
@@ -53,6 +55,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - GoogleDataTransport
     - GoogleUtilities
+    - JJFloatingActionButton
     - Kingfisher
     - leveldb-library
     - lottie-ios
@@ -63,12 +66,13 @@ SPEC REPOS:
     - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
-  Firebase: ee9b1d9b1801371e29f5591eda89eb5a314ab599
-  FirebaseCore: c7e3fa30492e50ccdeef280bf0d5584af38da3e1
-  FirebaseCoreDiagnostics: c2836d254a8f0bbb4121ff18f2c2ea39d118fd08
-  FirebaseDatabase: c610ab55bcb033d5eb3d17acba57301068a28497
+  Firebase: 7e8fe528c161b9271d365217a74c16aaf834578e
+  FirebaseCore: b84a44ee7ba999e0f9f76d198a9c7f60a797b848
+  FirebaseCoreDiagnostics: fd0c8490f34287229c1d6c103d3a55f81ec85712
+  FirebaseDatabase: 8bfbe7bb8d355f9727507bcf4a2116cb3aabdc5e
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
+  JJFloatingActionButton: fdc3aefb0f28f04d0f988fa25d5fac97028a9ea7
   Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
@@ -78,6 +82,6 @@ SPEC CHECKSUMS:
   Tabman: 447a50447ed2869c39ab3b1a779327e43e067c4e
   youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: 4a5db6596d8cd5abd58ab6a84c29021d53b5502e
+PODFILE CHECKSUM: ae7b1c617068dd30d5f4f5f8b99ca0a4220d0960
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.3

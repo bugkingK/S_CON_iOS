@@ -4,7 +4,6 @@
 //
 //  Created by 김지인 on 2022/03/19.
 //
-
 import UIKit
 
 struct ContestName{
@@ -52,8 +51,7 @@ extension ViewController: UITableViewDataSource{
 //MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryVC") as? CategoryViewController else { return }
+        guard let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "CategoryVC") as? CategoryViewController else { return }
         //카테고리 VC로 값 전달할 코드
         
         self.navigationController?.pushViewController(categoryVC, animated: true)
