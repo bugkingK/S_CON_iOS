@@ -115,6 +115,40 @@
             </objects>
             <point key="canvasLocation" x="513.04347826086962" y="97.767857142857139"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="XAm-fL-nux">
+            <objects>
+                <viewController storyboardIdentifier="webVC" id="4ab-xF-djX" customClass="WebViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xwH-so-01K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMQ-gb-qxL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oPK-EK-o8a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tMQ-gb-qxL" firstAttribute="leading" secondItem="oPK-EK-o8a" secondAttribute="leading" id="9Rd-KJ-dRg"/>
+                            <constraint firstItem="oPK-EK-o8a" firstAttribute="trailing" secondItem="tMQ-gb-qxL" secondAttribute="trailing" id="FGe-1v-bhD"/>
+                            <constraint firstAttribute="bottom" secondItem="tMQ-gb-qxL" secondAttribute="bottom" id="QGT-rL-kmG"/>
+                            <constraint firstItem="tMQ-gb-qxL" firstAttribute="top" secondItem="oPK-EK-o8a" secondAttribute="top" id="koh-If-rka"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="tMQ-gb-qxL" id="WqU-dc-ksd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zgl-RX-BiA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="110"/>
+        </scene>
         <!--Category View Controller-->
         <scene sceneID="yaE-A5-Lnj">
             <objects>
