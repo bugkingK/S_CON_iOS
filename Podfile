@@ -6,11 +6,12 @@ target 'SCON_iOS' do
   use_frameworks!
 
   # Pods for SCON_iOS
+  pod 'Tabman', '~> 2.12'
+  pod "youtube-ios-player-helper"
+  pod 'JJFloatingActionButton'
   pod 'lottie-ios'
   pod 'Firebase/Database'
   pod 'Kingfisher'
-  pod 'Tabman', '~> 2.12'
-  pod "youtube-ios-player-helper"
 
 
 end
