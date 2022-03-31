@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.customNavigation()
         mainTableView.delegate = self
         mainTableView.dataSource = self
         mainTableView.isScrollEnabled = false //스크롤 금지

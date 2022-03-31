@@ -18,11 +18,11 @@ extension UIViewController{
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             //아이템 간 간격 설정
             item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-            
             //그룹 사이즈
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(180))
             // 그룹 만들기
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+            
             // 그룹으로 섹션 만들기
             let section = NSCollectionLayoutSection(group: group)
             //섹션에 대한 간격 설정
@@ -45,12 +45,17 @@ extension UIViewController{
 }
 
 extension UIView{
-    func makeBackground() {
-        backgroundColor = .yellow
-        layer.cornerRadius = 20
-        layer.shadowColor = UIColor.gray.cgColor
-        layer.shadowOffset = CGSize(width: 5, height: 5)
-        layer.shadowRadius = 2
-        layer.shadowOpacity = 0.7
+    func makeShadow(){
+        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowOffset = CGSize(width: 3, height: 3)
+        layer.shadowRadius = 5
+        layer.shadowOpacity = 0.5
+    }
+}
+
+extension UINavigationController{
+    func customNavigation() {
+        navigationBar.tintColor = UIColor(named: "darkYellow")
+        navigationBar.topItem?.title = ""
     }
 }
