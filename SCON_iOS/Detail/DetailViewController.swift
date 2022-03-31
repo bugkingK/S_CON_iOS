@@ -11,6 +11,8 @@ import youtube_ios_player_helper
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var youtubeView: YTPlayerView!
+    @IBOutlet weak var titleView: UIView!
+    
     var navTitle: String?
 
 
@@ -19,8 +21,10 @@ class DetailViewController: UIViewController {
         youtubeView.load(withVideoId: "SjOMPEmnl3Y")
         //네비게이션 설정
         self.navigationItem.title = navTitle
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.left.2.circle"), style: .done, target: self, action: #selector(homeTapped))
-        //테이블 뷰 설정
+        self.navigationController?.customNavigation()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "house"), style: .done, target: self, action: #selector(homeTapped))
+        //titleView 배경 지정
+        titleView.makeShadow()
 
     }
     

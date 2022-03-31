@@ -13,6 +13,7 @@ class Cate2019ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
@@ -51,6 +52,7 @@ extension Cate2019ViewController: UICollectionViewDataSource{
         cell.imageView.image = arrData[indexPath.section].dataList[indexPath.row].photo
         cell.titleLabel.text = arrData[indexPath.section].dataList[indexPath.row].title
         cell.descriptionLabel.text = arrData[indexPath.section].dataList[indexPath.row].discription
+
         return cell
     }
     //섹션의 개수 설정
