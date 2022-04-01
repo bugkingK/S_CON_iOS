@@ -33,8 +33,9 @@ class ViewController: UIViewController {
         let actionButton = JJFloatingActionButton()
         actionButton.buttonColor = UIColor(named: "darkYellow") ?? .yellow
 
-        actionButton.addItem(title: "작품 추가", image: UIImage(systemName: "folder.badge.plus")?.withRenderingMode(.alwaysTemplate)) { item in
-            item.addTarget(self, action: #selector(self.addWork), for: .touchUpInside)
+        actionButton.addItem(title: "작품 추가", image: UIImage(systemName: "folder.badge.plus")?.withRenderingMode(.alwaysTemplate)) { [weak self] item in
+            guard let self = self else { return }
+            item.addTarget(self, action: #selector(self.addWork(self.googleFormURL)), for: .touchUpInside)
         }
 
         actionButton.addItem(title: "개선사항 전달", image: UIImage(systemName: "paperplane")?.withRenderingMode(.alwaysTemplate)) { item in
@@ -53,9 +54,9 @@ class ViewController: UIViewController {
             
             
     }
-    @objc private func addWork(){
+    @objc private func addWork(_ url: String){
         guard let webVC = self.storyboard?.instantiateViewController(withIdentifier: "webVC") as? WebViewController else { return }
-        webVC.url = googleFormURL
+        webVC.url = url
         self.navigationController?.pushViewController(webVC, animated: true)
     }
 
