@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        youtubeView.load(withVideoId: "SjOMPEmnl3Y")
+        youtubeView.load(withVideoId: "VpKfXxeuBDQ")
         //네비게이션 설정
         self.navigationItem.title = navTitle
         self.navigationController?.customNavigation()
