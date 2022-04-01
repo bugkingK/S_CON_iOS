@@ -14,13 +14,12 @@ struct ContestName{
 }
 
 class ViewController: UIViewController {
-    
-    private let googleFormURL: String = "https://forms.gle/PQr8et2TZPMXg9Yu5"
-    
+        
     @IBOutlet weak var mainTableView: UITableView!
     let mainList = [ContestName(name: "IT 부문", systemImg: "tv.circle.fill", imgColor: .blue),
                     ContestName(name: "미디어콘텐츠 부문", systemImg: "headphones.circle.fill", imgColor: .orange),
                     ContestName(name: "SW 경진대회", systemImg: "wave.3.right.circle.fill", imgColor: .green)]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +32,15 @@ class ViewController: UIViewController {
         let actionButton = JJFloatingActionButton()
         actionButton.buttonColor = UIColor(named: "darkYellow") ?? .yellow
 
-        actionButton.addItem(title: "작품 추가", image: UIImage(systemName: "folder.badge.plus")?.withRenderingMode(.alwaysTemplate)) { [weak self] item in
-            guard let self = self else { return }
-            item.addTarget(self, action: #selector(self.addWork(self.googleFormURL)), for: .touchUpInside)
+        actionButton.addItem(title: "작품 추가", image: UIImage(systemName: "folder.badge.plus")?.withRenderingMode(.alwaysTemplate)) { item in
+            let title = item.titleLabel.text
+            self.urlToWebView("https://forms.gle/PQr8et2TZPMXg9Yu5", title: title ?? "")
+            
         }
 
         actionButton.addItem(title: "개선사항 전달", image: UIImage(systemName: "paperplane")?.withRenderingMode(.alwaysTemplate)) { item in
-          
+            let title = item.titleLabel.text
+            self.urlToWebView("https://open.kakao.com/o/syVEDP8d", title: title ?? "")
         }
 
         actionButton.addItem(title: "개발자 소개", image: UIImage(systemName: "person.fill")) { item in
@@ -49,16 +50,18 @@ class ViewController: UIViewController {
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
-                
-            
-            
-            
+                    
     }
-    @objc private func addWork(_ url: String){
+    
+    private func urlToWebView(_ url: String, title: String){
         guard let webVC = self.storyboard?.instantiateViewController(withIdentifier: "webVC") as? WebViewController else { return }
         webVC.url = url
+        webVC.navigationTItle = title
         self.navigationController?.pushViewController(webVC, animated: true)
     }
+    
+    
+   
 
 }
 

@@ -13,11 +13,11 @@ class WebViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     
     var url: String = ""
-    
+    var navigationTItle: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.customNavigation()
-        self.navigationItem.title = "작품추가를 위한 구글폼"
+        self.navigationItem.title = navigationTItle
         guard let url = URL(string: url) else { return }
         let request = URLRequest(url: url)
         webView.load(request)
