@@ -16,10 +16,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.customNavigation()
         [googleLoginBtn, defaultLoginBtn, memberJoinBtn].forEach { btn in
             btn?.makeCircleAndbgColor(bgColor: .systemYellow)
         }
+        
     }
    
 

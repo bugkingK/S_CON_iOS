@@ -238,7 +238,7 @@ All-in-One </string>
             </objects>
             <point key="canvasLocation" x="278" y="-824"/>
         </scene>
-        <!--Default Login View Controller-->
+        <!--로그인-->
         <scene sceneID="Qer-li-eet">
             <objects>
                 <viewController id="h2T-JJ-dWs" customClass="DefaultLoginViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -312,7 +312,7 @@ All-in-One </string>
                             <constraint firstItem="Hwr-21-Wkq" firstAttribute="leading" secondItem="PG2-B8-E8r" secondAttribute="leading" constant="30" id="xw5-Dg-amH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="R6R-ix-MKg"/>
+                    <navigationItem key="navigationItem" title="로그인" id="R6R-ix-MKg"/>
                     <connections>
                         <outlet property="emailTextField" destination="ExF-xk-fKF" id="APh-Rk-Osb"/>
                         <outlet property="errorMsgLabel" destination="fYC-Ed-K3A" id="x5B-2t-YUT"/>
