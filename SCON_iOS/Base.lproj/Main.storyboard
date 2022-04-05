@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" id="BYZ-38-t0r" customClass="ViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,6 +109,7 @@
                     <navigationItem key="navigationItem" id="3JO-qf-Dvl"/>
                     <connections>
                         <outlet property="mainTableView" destination="ixL-tr-Llm" id="eXi-Nt-aGf"/>
+                        <outlet property="mainTitleLabel" destination="jL7-VF-OjX" id="TDW-uv-4cj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -241,7 +242,7 @@ All-in-One </string>
         <!--로그인-->
         <scene sceneID="Qer-li-eet">
             <objects>
-                <viewController id="h2T-JJ-dWs" customClass="DefaultLoginViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h2T-JJ-dWs" customClass="EmailLoginViewController" customModule="SCON_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Yq-yH-Icc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
