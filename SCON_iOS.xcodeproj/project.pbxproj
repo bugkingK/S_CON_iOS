@@ -22,6 +22,7 @@
 		6C96334A27F30550006E6FF8 /* Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C96334927F30550006E6FF8 /* Extenstion.swift */; };
 		6C98F40A27E5BD070038B1C6 /* mainLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C98F40927E5BD070038B1C6 /* mainLottie.json */; };
 		6C9C2F3D27FC088F00C712CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9C2F3C27FC088F00C712CA /* LoginViewController.swift */; };
+		6C9C2F4027FC0D5000C712CA /* DefaultLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9C2F3F27FC0D5000C712CA /* DefaultLoginViewController.swift */; };
 		6CAAB1C927F5EF7D003C963F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAAB1C827F5EF7D003C963F /* WebKit.framework */; };
 		6CB946B627EAE9F100BF7529 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB946B527EAE9F100BF7529 /* CategoryViewController.swift */; };
 		6CB946BA27EB043500BF7529 /* Cate2021ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB946B927EB043500BF7529 /* Cate2021ViewController.swift */; };
@@ -51,6 +52,7 @@
 		6C96334927F30550006E6FF8 /* Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstion.swift; sourceTree = "<group>"; };
 		6C98F40927E5BD070038B1C6 /* mainLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainLottie.json; sourceTree = "<group>"; };
 		6C9C2F3C27FC088F00C712CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6C9C2F3F27FC0D5000C712CA /* DefaultLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginViewController.swift; sourceTree = "<group>"; };
 		6CAAB1C827F5EF7D003C963F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6CB946B527EAE9F100BF7529 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		6CB946B927EB043500BF7529 /* Cate2021ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cate2021ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		6C9C2F3E27FC089700C712CA /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				6C9C2F3F27FC0D5000C712CA /* DefaultLoginViewController.swift */,
 				6C9C2F3C27FC088F00C712CA /* LoginViewController.swift */,
 			);
 			path = Login;
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C9C2F4027FC0D5000C712CA /* DefaultLoginViewController.swift in Sources */,
 				6C143CE127E5A95700E833DE /* ViewController.swift in Sources */,
 				6C143CDD27E5A95700E833DE /* AppDelegate.swift in Sources */,
 				6CB946BE27EB06DE00BF7529 /* Cate2019ViewController.swift in Sources */,

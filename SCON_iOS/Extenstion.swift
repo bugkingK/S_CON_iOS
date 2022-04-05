@@ -59,3 +59,11 @@ extension UINavigationController{
         navigationBar.topItem?.title = ""
     }
 }
+
+//버튼 백그라운드, 둥글게 만들기
+extension UIButton{
+    func makeCircleAndbgColor(bgColor: UIColor){
+        backgroundColor = bgColor
+        layer.cornerRadius = 20
+    }
+}
