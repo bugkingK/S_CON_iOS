@@ -18,10 +18,11 @@ class CategoryViewController: TabmanViewController {
         super.viewDidLoad()
         self.navigationItem.title = "수상작들"
         self.navigationController?.customNavigation()
-
-        let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwenyOneViewController") as! Cate2021ViewController
-        let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwentyViewController") as! Cate2020ViewController
-        let vc3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NineteenViewController") as! Cate2019ViewController
+        //공통된 스토리보드는 변수로 뽑아내기
+        let storyboard = UIStoryboard.init(name: "Category", bundle: nil)
+        let vc1 = storyboard.instantiateViewController(withIdentifier: "TwenyOneViewController") as! Cate2021ViewController
+        let vc2 = storyboard.instantiateViewController(withIdentifier: "TwentyViewController") as! Cate2020ViewController
+        let vc3 = storyboard.instantiateViewController(withIdentifier: "NineteenViewController") as! Cate2019ViewController
         viewControllers.append(vc1)
         viewControllers.append(vc2)
         viewControllers.append(vc3)
