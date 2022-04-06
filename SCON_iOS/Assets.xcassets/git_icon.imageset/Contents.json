@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "장려상.png",
+      "filename" : "git_icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "장려상@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "장려상@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
