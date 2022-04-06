@@ -12,6 +12,7 @@ target 'SCON_iOS' do
   pod 'lottie-ios'
   pod 'Firebase/Database'
   pod 'Kingfisher'
+  pod 'Firebase/Auth'
 
 
 end
