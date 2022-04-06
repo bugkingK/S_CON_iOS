@@ -88,7 +88,8 @@ extension Cate2020ViewController: UICollectionViewDataSource{
 extension Cate2020ViewController: UICollectionViewDelegate{
     //셀 선택시 동작
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "detailVC") as? DetailViewController else { return }
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        guard let detailVC = storyboard.instantiateViewController(withIdentifier: "detailVC") as? DetailViewController else { return }
         //카테고리 VC로 값 전달할 코드
         detailVC.navTitle = self.arrData[indexPath.section].dataList[indexPath.row].title
         

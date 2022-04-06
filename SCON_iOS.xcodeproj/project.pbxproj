@@ -23,12 +23,15 @@
 		6C98F40A27E5BD070038B1C6 /* mainLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C98F40927E5BD070038B1C6 /* mainLottie.json */; };
 		6C9C2F3D27FC088F00C712CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9C2F3C27FC088F00C712CA /* LoginViewController.swift */; };
 		6C9C2F4027FC0D5000C712CA /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9C2F3F27FC0D5000C712CA /* EmailLoginViewController.swift */; };
-		6C9C2F4427FC32FF00C712CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C9C2F4327FC32FF00C712CA /* GoogleService-Info.plist */; };
 		6CAAB1C927F5EF7D003C963F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAAB1C827F5EF7D003C963F /* WebKit.framework */; };
 		6CB946B627EAE9F100BF7529 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB946B527EAE9F100BF7529 /* CategoryViewController.swift */; };
 		6CB946BA27EB043500BF7529 /* Cate2021ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB946B927EB043500BF7529 /* Cate2021ViewController.swift */; };
 		6CB946BC27EB044C00BF7529 /* Cate2020ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB946BB27EB044C00BF7529 /* Cate2020ViewController.swift */; };
 		6CB946BE27EB06DE00BF7529 /* Cate2019ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB946BD27EB06DE00BF7529 /* Cate2019ViewController.swift */; };
+		6CE9C17027FD7EEA006386E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CE9C16F27FD7EEA006386E8 /* GoogleService-Info.plist */; };
+		6CE9C17227FD7FDB006386E8 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE9C17127FD7FDB006386E8 /* Category.storyboard */; };
+		6CE9C17427FD800C006386E8 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE9C17327FD800C006386E8 /* Detail.storyboard */; };
+		6CE9C17627FD8031006386E8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE9C17527FD8031006386E8 /* Login.storyboard */; };
 		6CE9DC3227F6CA130099DA7E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9DC3127F6CA130099DA7E /* WebViewController.swift */; };
 		A61054E2E08DA02CF2FF8028 /* Pods_SCON_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF6D4C9A2D2A9CD4AA36747 /* Pods_SCON_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -54,12 +57,15 @@
 		6C98F40927E5BD070038B1C6 /* mainLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainLottie.json; sourceTree = "<group>"; };
 		6C9C2F3C27FC088F00C712CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6C9C2F3F27FC0D5000C712CA /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
-		6C9C2F4327FC32FF00C712CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6CAAB1C827F5EF7D003C963F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6CB946B527EAE9F100BF7529 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		6CB946B927EB043500BF7529 /* Cate2021ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cate2021ViewController.swift; sourceTree = "<group>"; };
 		6CB946BB27EB044C00BF7529 /* Cate2020ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cate2020ViewController.swift; sourceTree = "<group>"; };
 		6CB946BD27EB06DE00BF7529 /* Cate2019ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cate2019ViewController.swift; sourceTree = "<group>"; };
+		6CE9C16F27FD7EEA006386E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../꼼꼼재은씨/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6CE9C17127FD7FDB006386E8 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
+		6CE9C17327FD800C006386E8 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		6CE9C17527FD8031006386E8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		6CE9DC3127F6CA130099DA7E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		7E49E59B0A8C5CC6826F98DD /* Pods-SCON_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCON_iOS.release.xcconfig"; path = "Target Support Files/Pods-SCON_iOS/Pods-SCON_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,20 +104,19 @@
 		6C143CDB27E5A95700E833DE /* SCON_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				6C96334927F30550006E6FF8 /* Extenstion.swift */,
 				6C96334C27F306B4006E6FF8 /* Detail */,
 				6CB946B427EAE9E700BF7529 /* Category */,
 				6C16EA6F27E9AAAE0067C539 /* Home */,
 				6C9C2F3E27FC089700C712CA /* Login */,
 				6C143CE727E5A95900E833DE /* LaunchScreen.storyboard */,
-				6C143CE227E5A95700E833DE /* Main.storyboard */,
+				6C96334927F30550006E6FF8 /* Extenstion.swift */,
 				6C143CE527E5A95900E833DE /* Assets.xcassets */,
 				6C4C356A27ED89C200D42FE4 /* Content.plist */,
 				6C143CEA27E5A95900E833DE /* Info.plist */,
 				6C143CDE27E5A95700E833DE /* SceneDelegate.swift */,
 				6C143CDC27E5A95700E833DE /* AppDelegate.swift */,
 				6C98F40927E5BD070038B1C6 /* mainLottie.json */,
-				6C9C2F4327FC32FF00C712CA /* GoogleService-Info.plist */,
+				6CE9C16F27FD7EEA006386E8 /* GoogleService-Info.plist */,
 			);
 			path = SCON_iOS;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 		6C16EA6F27E9AAAE0067C539 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6C143CE227E5A95700E833DE /* Main.storyboard */,
 				6C143CE027E5A95700E833DE /* ViewController.swift */,
 				6CE9DC3127F6CA130099DA7E /* WebViewController.swift */,
 				6C16EA6C27E9A0090067C539 /* MainTableViewCell.swift */,
@@ -140,6 +146,7 @@
 			children = (
 				6C548BF327F2C52200133BAD /* DetailData.swift */,
 				6C4C356C27ED90CF00D42FE4 /* DetailViewController.swift */,
+				6CE9C17327FD800C006386E8 /* Detail.storyboard */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -149,6 +156,7 @@
 			children = (
 				6C9C2F3F27FC0D5000C712CA /* EmailLoginViewController.swift */,
 				6C9C2F3C27FC088F00C712CA /* LoginViewController.swift */,
+				6CE9C17527FD8031006386E8 /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 				6CB946B927EB043500BF7529 /* Cate2021ViewController.swift */,
 				6CB946BB27EB044C00BF7529 /* Cate2020ViewController.swift */,
 				6CB946BD27EB06DE00BF7529 /* Cate2019ViewController.swift */,
+				6CE9C17127FD7FDB006386E8 /* Category.storyboard */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -244,11 +253,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C143CE927E5A95900E833DE /* LaunchScreen.storyboard in Resources */,
-				6C9C2F4427FC32FF00C712CA /* GoogleService-Info.plist in Resources */,
 				6C4C356B27ED89C200D42FE4 /* Content.plist in Resources */,
 				6C98F40A27E5BD070038B1C6 /* mainLottie.json in Resources */,
+				6CE9C17427FD800C006386E8 /* Detail.storyboard in Resources */,
+				6CE9C17227FD7FDB006386E8 /* Category.storyboard in Resources */,
 				6C143CE627E5A95900E833DE /* Assets.xcassets in Resources */,
 				6C143CE427E5A95700E833DE /* Main.storyboard in Resources */,
+				6CE9C17027FD7EEA006386E8 /* GoogleService-Info.plist in Resources */,
+				6CE9C17627FD8031006386E8 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

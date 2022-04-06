@@ -28,7 +28,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.customNavigation()
-        navigationController?.navigationBar.isHidden = true
         mainTableView.delegate = self
         mainTableView.dataSource = self
         mainTableView.isScrollEnabled = false //스크롤 금지
@@ -102,7 +101,8 @@ extension ViewController: UITableViewDataSource{
 //MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "CategoryVC") as? CategoryViewController else { return }
+        let storyboard = UIStoryboard(name: "Category", bundle: nil)
+        guard let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryVC") as? CategoryViewController else { return }
         //카테고리 VC로 값 전달할 코드
         
         self.navigationController?.pushViewController(categoryVC, animated: true)
