@@ -6,7 +6,7 @@
 //
 import UIKit
 import JJFloatingActionButton
-import FirebaseAuth
+import FirebaseDatabase
 
 struct ContestName{
     let name: String
@@ -15,10 +15,9 @@ struct ContestName{
 }
 
 class ViewController: UIViewController {
-    
+    var ref: DatabaseReference! //Firebase Realtime database
     
     @IBOutlet weak var mainTitleLabel: UILabel!
-    
     @IBOutlet weak var mainTableView: UITableView!
     let mainList = [ContestName(name: "IT 부문", systemImg: "tv.circle.fill", imgColor: .blue),
                     ContestName(name: "미디어콘텐츠 부문", systemImg: "headphones.circle.fill", imgColor: .orange),
@@ -35,11 +34,15 @@ class ViewController: UIViewController {
         //플러팅 버튼 구성
         self.configureFloatingButton()
         
-        //메인 라벨 변경
-        let email = Auth.auth().currentUser?.email ?? "없음"
-        self.mainTitleLabel.text = """
-        \(email)님 경진대회 확인
-        """
+        //Firebase Reference
+        ref = Database.database().reference()
+//        ref.observe(.value) { snapshot in
+//            guard let value = snapshot.value as? [String: [String: [String: [String: Any]]]] else { return }
+//            do {
+//                let jsonData = try JSONSerialization.data(withJSONObject: value)
+//                let workData = try JSONDecoder().decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
+//            }
+//        }
                     
     }
     

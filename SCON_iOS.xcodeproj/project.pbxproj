@@ -14,6 +14,8 @@
 		6C143CE627E5A95900E833DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C143CE527E5A95900E833DE /* Assets.xcassets */; };
 		6C143CE927E5A95900E833DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C143CE727E5A95900E833DE /* LaunchScreen.storyboard */; };
 		6C16EA6D27E9A0090067C539 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C16EA6C27E9A0090067C539 /* MainTableViewCell.swift */; };
+		6C3964FC27FF2A6500EEFD26 /* ContestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3964FB27FF2A6500EEFD26 /* ContestData.swift */; };
+		6C39650227FF2C9300EEFD26 /* test1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C39650127FF2C9300EEFD26 /* test1.json */; };
 		6C4C356B27ED89C200D42FE4 /* Content.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C4C356A27ED89C200D42FE4 /* Content.plist */; };
 		6C4C356D27ED90CF00D42FE4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C356C27ED90CF00D42FE4 /* DetailViewController.swift */; };
 		6C548BF427F2C52200133BAD /* DetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C548BF327F2C52200133BAD /* DetailData.swift */; };
@@ -48,6 +50,8 @@
 		6C143CE827E5A95900E833DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C143CEA27E5A95900E833DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C16EA6C27E9A0090067C539 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		6C3964FB27FF2A6500EEFD26 /* ContestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestData.swift; sourceTree = "<group>"; };
+		6C39650127FF2C9300EEFD26 /* test1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test1.json; path = ../../../../.Trash/test1.json; sourceTree = "<group>"; };
 		6C4C356A27ED89C200D42FE4 /* Content.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Content.plist; sourceTree = "<group>"; };
 		6C4C356C27ED90CF00D42FE4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6C548BF327F2C52200133BAD /* DetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailData.swift; sourceTree = "<group>"; };
@@ -115,7 +119,7 @@
 				6C143CEA27E5A95900E833DE /* Info.plist */,
 				6C143CDE27E5A95700E833DE /* SceneDelegate.swift */,
 				6C143CDC27E5A95700E833DE /* AppDelegate.swift */,
-				6C98F40927E5BD070038B1C6 /* mainLottie.json */,
+				6C3964FF27FF2C5F00EEFD26 /* File */,
 				6CE9C16F27FD7EEA006386E8 /* GoogleService-Info.plist */,
 			);
 			path = SCON_iOS;
@@ -126,10 +130,20 @@
 			children = (
 				6C143CE227E5A95700E833DE /* Main.storyboard */,
 				6C143CE027E5A95700E833DE /* ViewController.swift */,
+				6C3964FB27FF2A6500EEFD26 /* ContestData.swift */,
 				6CE9DC3127F6CA130099DA7E /* WebViewController.swift */,
 				6C16EA6C27E9A0090067C539 /* MainTableViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		6C3964FF27FF2C5F00EEFD26 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				6C98F40927E5BD070038B1C6 /* mainLottie.json */,
+				6C39650127FF2C9300EEFD26 /* test1.json */,
+			);
+			path = File;
 			sourceTree = "<group>";
 		};
 		6C96334B27F30698006E6FF8 /* Cell */ = {
@@ -255,6 +269,7 @@
 				6C143CE927E5A95900E833DE /* LaunchScreen.storyboard in Resources */,
 				6C4C356B27ED89C200D42FE4 /* Content.plist in Resources */,
 				6C98F40A27E5BD070038B1C6 /* mainLottie.json in Resources */,
+				6C39650227FF2C9300EEFD26 /* test1.json in Resources */,
 				6CE9C17427FD800C006386E8 /* Detail.storyboard in Resources */,
 				6CE9C17227FD7FDB006386E8 /* Category.storyboard in Resources */,
 				6C143CE627E5A95900E833DE /* Assets.xcassets in Resources */,
@@ -328,6 +343,7 @@
 				6CB946BA27EB043500BF7529 /* Cate2021ViewController.swift in Sources */,
 				6C631B5D27EB0DEF00C7336E /* HeaderCollectionReusableView.swift in Sources */,
 				6CE9DC3227F6CA130099DA7E /* WebViewController.swift in Sources */,
+				6C3964FC27FF2A6500EEFD26 /* ContestData.swift in Sources */,
 				6CB946BC27EB044C00BF7529 /* Cate2020ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
