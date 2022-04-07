@@ -35,11 +35,11 @@ class ViewController: UIViewController {
         //플러팅 버튼 구성
         self.configureFloatingButton()
         
-        //메인 라벨 변경
-        let email = Auth.auth().currentUser?.email ?? "없음"
-        self.mainTitleLabel.text = """
-        \(email)님 경진대회 확인
-        """
+        //[보류] 로그인 시 메인 라벨 변경
+//        let email = Auth.auth().currentUser?.email ?? "없음"
+//        self.mainTitleLabel.text = """
+//        \(email)님 경진대회 확인
+//        """
                     
     }
     
@@ -101,6 +101,7 @@ extension ViewController: UITableViewDataSource{
 //MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Category", bundle: nil)
         guard let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryVC") as? CategoryViewController else { return }
         //카테고리 VC로 값 전달할 코드
