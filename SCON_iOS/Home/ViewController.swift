@@ -6,6 +6,7 @@
 //
 import UIKit
 import JJFloatingActionButton
+import FirebaseDatabase
 
 struct ContestName{
     let name: String
@@ -17,6 +18,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var mainTableView: UITableView!
+    
+    var ref: DatabaseReference! //Firebase Realtime database
+    var IT_Data: [ContestData] = []
+    var Media_Data: [ContestData] = []
+    var SW_Data: [ContestData] = []
+
     let mainList = [ContestName(name: "IT 부문", systemImg: "tv.circle.fill", imgColor: .blue),
                     ContestName(name: "미디어콘텐츠 부문", systemImg: "headphones.circle.fill", imgColor: .orange),
                     ContestName(name: "SW 경진대회", systemImg: "wave.3.right.circle.fill", imgColor: .green)]
@@ -32,7 +39,35 @@ class ViewController: UIViewController {
         //플러팅 버튼 구성
         self.configureFloatingButton()
         
-       
+        //MARK: - Firebase Reference
+        ref = Database.database().reference()
+        ref.observe(.value) { snapshot in
+            guard let value = snapshot.value as?  [String: [String: Any]] else { return }
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: value)
+                let teamData = try JSONDecoder().decode([String: ContestData].self, from: jsonData)
+                let teamList = Array(teamData.values)
+                self.IT_Data = teamList.filter { $0.contestSort == "IT" }
+                self.Media_Data = teamList.filter { $0.contestSort == "MEDIA" }
+                self.SW_Data = teamList.filter { $0.contestSort == "SW" }
+                //여기서 값이 넘어가지 않음 ... ㅜㅜ
+
+            } catch let DecodingError.dataCorrupted(context) {
+                print(context)
+            } catch let DecodingError.keyNotFound(key, context) {
+                print("Key '\(key)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.valueNotFound(value, context) {
+                print("Value '\(value)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.typeMismatch(type, context)  {
+                print("Type '\(type)' mismatch:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch {
+                print("error: ", error)
+            }
+        }
+
                     
     }
     
@@ -97,7 +132,14 @@ extension ViewController: UITableViewDelegate{
         let storyboard = UIStoryboard(name: "Category", bundle: nil)
         guard let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryVC") as? CategoryViewController else { return }
         //카테고리 VC로 값 전달할 코드
-        
+        if indexPath.row == 0 {
+            print(self.IT_Data)
+            categoryVC.teamData = self.IT_Data
+        } else if indexPath.row == 1 {
+            categoryVC.teamData = self.Media_Data
+        } else {
+            categoryVC.teamData = self.SW_Data
+        }
         self.navigationController?.pushViewController(categoryVC, animated: true)
     }
 }

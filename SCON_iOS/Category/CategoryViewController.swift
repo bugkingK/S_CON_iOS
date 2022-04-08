@@ -8,60 +8,29 @@
 import UIKit
 import Tabman
 import Pageboy
-import FirebaseDatabase
+
 
 class CategoryViewController: TabmanViewController {
     
     private var viewControllers: Array<UIViewController> = []
     let years = ["2021", "2020", "2019"]
     
-    var ref: DatabaseReference! //Firebase Realtime database
-    
-    var IT_Data: [ContestData] = []
-    var Media_Data: [ContestData] = []
-    var SW_Data: [ContestData] = []
+    var teamData = [ContestData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "수상작들"
         self.navigationController?.customNavigation()
         self.createTabBar() //하단 탭바
-        
-        //MARK: - Firebase Reference
-        ref = Database.database().reference()
-        ref.observe(.value) { snapshot in
-            guard let value = snapshot.value as?  [String: [String: Any]] else { return }
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: value)
-                let teamData = try JSONDecoder().decode([String: ContestData].self, from: jsonData)
-                let teamList = Array(teamData.values)
-                print("teamList: \(teamList)")
-                self.IT_Data = teamList.filter { $0.contestSort == "IT" }
-                self.Media_Data = teamList.filter { $0.contestSort == "MEDIA" }
-                self.SW_Data = teamList.filter { $0.contestSort == "SW" }
-                
-            } catch let DecodingError.dataCorrupted(context) {
-                print(context)
-            } catch let DecodingError.keyNotFound(key, context) {
-                print("Key '\(key)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-            } catch let DecodingError.valueNotFound(value, context) {
-                print("Value '\(value)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-            } catch let DecodingError.typeMismatch(type, context)  {
-                print("Type '\(type)' mismatch:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-            } catch {
-                print("error: ", error)
-            }
-        }
-
+        print("TeamData \(teamData)")
         //MARK: - 상단 Tabbar
         let storyboard = UIStoryboard.init(name: "Category", bundle: nil)
         let vc1 = storyboard.instantiateViewController(withIdentifier: "TwenyOneViewController") as! Cate2021ViewController
         let vc2 = storyboard.instantiateViewController(withIdentifier: "TwentyViewController") as! Cate2020ViewController
         let vc3 = storyboard.instantiateViewController(withIdentifier: "NineteenViewController") as! Cate2019ViewController
-        vc1.teamData = IT_Data
+        
+        
+        
         viewControllers.append(vc1)
         viewControllers.append(vc2)
         viewControllers.append(vc3)
@@ -71,6 +40,7 @@ class CategoryViewController: TabmanViewController {
         
 
     }
+    
     // Create Tabbar
     private func createTabBar() {
         let bar = TMBar.ButtonBar()
