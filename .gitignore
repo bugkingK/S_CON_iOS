@@ -1,6 +1,5 @@
 
 Pods/
-Podfile.lock
 fastlane/Appfile
 fastlane/report.xml
 fastlane/Preview.html
