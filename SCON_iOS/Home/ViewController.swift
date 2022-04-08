@@ -132,6 +132,7 @@ extension ViewController: UITableViewDataSource{
 //MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Category", bundle: nil)
         guard let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryVC") as? CategoryViewController else { return }
         //카테고리 VC로 값 전달할 코드
