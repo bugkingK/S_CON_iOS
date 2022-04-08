@@ -58,6 +58,8 @@
 		6C631B5E27EB107500C7336E /* WorkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCollectionViewCell.swift; sourceTree = "<group>"; };
 		6C8D6A1127FFF89F004FB474 /* dummy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dummy.json; path = ../../dummy.json; sourceTree = "<group>"; };
 		6C8D6A1327FFF907004FB474 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6C8D6A1528001C01004FB474 /* dummy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dummy.json; sourceTree = "<group>"; };
+		6C8D6A1628001C05004FB474 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C96334927F30550006E6FF8 /* Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstion.swift; sourceTree = "<group>"; };
 		6C98F40927E5BD070038B1C6 /* mainLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainLottie.json; sourceTree = "<group>"; };
 		6C9C2F3C27FC088F00C712CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,8 @@
 		6C3964FF27FF2C5F00EEFD26 /* File */ = {
 			isa = PBXGroup;
 			children = (
+				6C8D6A1628001C05004FB474 /* GoogleService-Info.plist */,
+				6C8D6A1528001C01004FB474 /* dummy.json */,
 				6C98F40927E5BD070038B1C6 /* mainLottie.json */,
 			);
 			path = File;

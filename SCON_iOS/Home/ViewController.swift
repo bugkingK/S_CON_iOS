@@ -51,6 +51,9 @@ class ViewController: UIViewController {
                 self.Media_Data = teamList.filter { $0.contestSort == "MEDIA" }
                 self.SW_Data = teamList.filter { $0.contestSort == "SW" }
                 //여기서 값이 넘어가지 않음 ... ㅜㅜ
+                DispatchQueue.main.async {
+                    self.mainTableView.reloadData()
+                }
 
             } catch let DecodingError.dataCorrupted(context) {
                 print(context)
