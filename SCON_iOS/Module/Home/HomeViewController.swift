@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  SCON_iOS
 //
 //  Created by 김지인 on 2022/03/19.
@@ -14,7 +14,7 @@ struct ContestName{
     let imgColor: UIColor
 }
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var mainTableView: UITableView!
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
     }
     
     private func urlToWebView(_ url: String, title: String){
-        guard let webVC = self.storyboard?.instantiateViewController(withIdentifier: "webVC") as? WebViewController else { return }
+        let webVC = WebViewController()
         webVC.url = url
         webVC.navigationTItle = title
         self.navigationController?.pushViewController(webVC, animated: true)
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
 }
 
 //MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource{
+extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mainList.count
     }
@@ -130,7 +130,7 @@ extension ViewController: UITableViewDataSource{
 }
 
 //MARK: - UITableViewDelegate
-extension ViewController: UITableViewDelegate{
+extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Category", bundle: nil)
