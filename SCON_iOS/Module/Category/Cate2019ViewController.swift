@@ -21,11 +21,11 @@ class Cate2019ViewController: UIViewController {
         collectionView.delegate = self
         
         //데이터 추가
-        arrData.append(Header(header: "대상", dataList: [Data(title: "BOOKREST", discription: "교내 전공 서적 서비스", photo: UIImage(named: "main")),
-                                                       Data(title: "title2", discription: "dis2", photo: UIImage(systemName: "house")),
-                                                         Data(title: "title3", discription: "dis2", photo: UIImage(systemName: "house"))]))
-        arrData.append(Header(header: "금상", dataList: [Data(title: "h1", discription: "d2", photo: UIImage(systemName: "house")),
-                                                       Data(title: "32", discription: "d1", photo: UIImage(systemName: "house"))]))
+        arrData.append(Header(header: "대상", dataList: [DataList(title: "BOOKREST", discription: "교내 전공 서적 서비스", photo: UIImage(named: "main")),
+                                                       DataList(title: "title2", discription: "dis2", photo: UIImage(systemName: "house")),
+                                                       DataList(title: "title3", discription: "dis2", photo: UIImage(systemName: "house"))]))
+        arrData.append(Header(header: "금상", dataList: [DataList(title: "h1", discription: "d2", photo: UIImage(systemName: "house")),
+                                                       DataList(title: "32", discription: "d1", photo: UIImage(systemName: "house"))]))
         
         
         self.collectionView.collectionViewLayout = createLayout()

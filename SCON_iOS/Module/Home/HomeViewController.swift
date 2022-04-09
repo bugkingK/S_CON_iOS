@@ -52,43 +52,63 @@ class HomeViewController: UIViewController {
         // 화면 출력.
     }
     
-    private func bindData() {
-        ref.observe(.value) { snapshot in
-            guard let value = snapshot.value as?  [String: [String: Any]] else { return }
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: value)
-                let teamData = try JSONDecoder().decode([String: ContestData].self, from: jsonData)
-                let teamList = Array(teamData.values)
-                for team in teamList {
-                    // contest : [{"name": "IT", id: 1}, {"name": "MEDIA", id: 2}, {"name": "SW", "id": 3}, {"name": "문학상", "id": 4}, {"name": "어쩌구저쩌구상", "id": 5}]
-                    
-                    // next -> id로 상세를 호출.. "data": [{"years", "2021"}, {"years": "2020"}, {"years": 2019, 수상작: ["id": 1]}]
-                    // 수상작 상세 -> id로 상세를 호출 {"작품상세": "~~~~~", "팀원정보": "~~~~~"}
-                }
-                
-                self.IT_Data = teamList.filter { $0.contestSort == "IT" }
-                self.Media_Data = teamList.filter { $0.contestSort == "MEDIA" }
-                self.SW_Data = teamList.filter { $0.contestSort == "SW" }
-                //여기서 값이 넘어가지 않음 ... ㅜㅜ
-                DispatchQueue.main.async {
-                    self.mainTableView.reloadData()
-                }
-
-            } catch let DecodingError.dataCorrupted(context) {
-                print(context)
-            } catch let DecodingError.keyNotFound(key, context) {
-                print("Key '\(key)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-            } catch let DecodingError.valueNotFound(value, context) {
-                print("Value '\(value)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-            } catch let DecodingError.typeMismatch(type, context)  {
-                print("Type '\(type)' mismatch:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-            } catch {
-                print("error: ", error)
-            }
+    struct ContestList: Codable {
+        let data: [Datum]
+        
+        struct Datum: Codable {
+            let id: Int
+            let name: String
         }
+    }
+    
+    struct ContestYear: Codable {
+        let id: Int
+        let name: String
+        let year: [Int]
+    }
+
+    private func bindData() {
+        print("loadData", APIKit.shared.request(url: "ContestList", type: ContestList.self))
+        print("loadData", APIKit.shared.request(url: "ContestYear", params: ["id": 0], type: ContestYear.self))
+        print("loadData", APIKit.shared.request(url: "ContestYear", params: ["id": 1], type: ContestYear.self))
+        print("loadData", APIKit.shared.request(url: "ContestYear", params: ["id": 2], type: ContestYear.self))
+        
+//        ref.observe(.value) { snapshot in
+//            guard let value = snapshot.value as?  [String: [String: Any]] else { return }
+//            do {
+//                let jsonData = try JSONSerialization.data(withJSONObject: value)
+//                let teamData = try JSONDecoder().decode([String: ContestData].self, from: jsonData)
+//                let teamList = Array(teamData.values)
+//                for team in teamList {
+//                    // contest : [{"name": "IT", id: 1}, {"name": "MEDIA", id: 2}, {"name": "SW", "id": 3}, {"name": "문학상", "id": 4}, {"name": "어쩌구저쩌구상", "id": 5}]
+//
+//                    // next -> id로 상세를 호출.. "data": [{"years", "2021"}, {"years": "2020"}, {"years": 2019, 수상작: ["id": 1]}]
+//                    // 수상작 상세 -> id로 상세를 호출 {"작품상세": "~~~~~", "팀원정보": "~~~~~"}
+//                }
+//
+//                self.IT_Data = teamList.filter { $0.contestSort == "IT" }
+//                self.Media_Data = teamList.filter { $0.contestSort == "MEDIA" }
+//                self.SW_Data = teamList.filter { $0.contestSort == "SW" }
+//                //여기서 값이 넘어가지 않음 ... ㅜㅜ
+//                DispatchQueue.main.async {
+//                    self.mainTableView.reloadData()
+//                }
+//
+//            } catch let DecodingError.dataCorrupted(context) {
+//                print(context)
+//            } catch let DecodingError.keyNotFound(key, context) {
+//                print("Key '\(key)' not found:", context.debugDescription)
+//                print("codingPath:", context.codingPath)
+//            } catch let DecodingError.valueNotFound(value, context) {
+//                print("Value '\(value)' not found:", context.debugDescription)
+//                print("codingPath:", context.codingPath)
+//            } catch let DecodingError.typeMismatch(type, context)  {
+//                print("Type '\(type)' mismatch:", context.debugDescription)
+//                print("codingPath:", context.codingPath)
+//            } catch {
+//                print("error: ", error)
+//            }
+//        }
     }
     
     private func urlToWebView(_ url: String, title: String){
