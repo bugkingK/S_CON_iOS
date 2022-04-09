@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  SCON_iOS
 //
 //  Created by 김지인 on 2022/03/19.
@@ -14,39 +14,58 @@ struct ContestName{
     let imgColor: UIColor
 }
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
-    @IBOutlet weak var mainTitleLabel: UILabel!
-    @IBOutlet weak var mainTableView: UITableView!
+    @IBOutlet private weak var mainTitleLabel: UILabel!
+    @IBOutlet private weak var mainTableView: UITableView!
     
-    var ref: DatabaseReference! //Firebase Realtime database
-    var IT_Data: [ContestData] = []
-    var Media_Data: [ContestData] = []
-    var SW_Data: [ContestData] = []
+    private var ref: DatabaseReference = Database.database().reference()
+    private var IT_Data: [ContestData] = []
+    private var Media_Data: [ContestData] = []
+    private var SW_Data: [ContestData] = []
 
-    let mainList = [ContestName(name: "IT 부문", systemImg: "tv.circle.fill", imgColor: .blue),
+    private let mainList = [ContestName(name: "IT 부문", systemImg: "tv.circle.fill", imgColor: .blue),
                     ContestName(name: "미디어콘텐츠 부문", systemImg: "headphones.circle.fill", imgColor: .orange),
                     ContestName(name: "SW 경진대회", systemImg: "wave.3.right.circle.fill", imgColor: .green)]
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLayout()
+        bindData()
+    }
+    
+    private func setupLayout() {
         navigationController?.customNavigation()
         mainTableView.delegate = self
         mainTableView.dataSource = self
         mainTableView.isScrollEnabled = false //스크롤 금지
-        
         //플러팅 버튼 구성
-        self.configureFloatingButton()
+        configureFloatingButton()
         
-        //MARK: - Firebase Reference
-        ref = Database.database().reference()
+        // 2022 -> [1. 2. 3. 4. 5. 6. ~~~]
+        
+        
+        // (2022 -> 작품들 -> 설명 + 등등) * 100000000
+        // 2022 -> 작품들 (이름, id) * 1000000000000000
+        // 상세로 들어갈 때, id -> 상세를 검색하는 것. (설명 + 등등)
+        // 화면 출력.
+    }
+    
+    private func bindData() {
         ref.observe(.value) { snapshot in
             guard let value = snapshot.value as?  [String: [String: Any]] else { return }
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: value)
                 let teamData = try JSONDecoder().decode([String: ContestData].self, from: jsonData)
                 let teamList = Array(teamData.values)
+                for team in teamList {
+                    // contest : [{"name": "IT", id: 1}, {"name": "MEDIA", id: 2}, {"name": "SW", "id": 3}, {"name": "문학상", "id": 4}, {"name": "어쩌구저쩌구상", "id": 5}]
+                    
+                    // next -> id로 상세를 호출.. "data": [{"years", "2021"}, {"years": "2020"}, {"years": 2019, 수상작: ["id": 1]}]
+                    // 수상작 상세 -> id로 상세를 호출 {"작품상세": "~~~~~", "팀원정보": "~~~~~"}
+                }
+                
                 self.IT_Data = teamList.filter { $0.contestSort == "IT" }
                 self.Media_Data = teamList.filter { $0.contestSort == "MEDIA" }
                 self.SW_Data = teamList.filter { $0.contestSort == "SW" }
@@ -70,12 +89,10 @@ class ViewController: UIViewController {
                 print("error: ", error)
             }
         }
-
-                    
     }
     
     private func urlToWebView(_ url: String, title: String){
-        guard let webVC = self.storyboard?.instantiateViewController(withIdentifier: "webVC") as? WebViewController else { return }
+        let webVC = WebViewController()
         webVC.url = url
         webVC.navigationTItle = title
         self.navigationController?.pushViewController(webVC, animated: true)
@@ -111,7 +128,7 @@ class ViewController: UIViewController {
 }
 
 //MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource{
+extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mainList.count
     }
@@ -130,7 +147,7 @@ extension ViewController: UITableViewDataSource{
 }
 
 //MARK: - UITableViewDelegate
-extension ViewController: UITableViewDelegate{
+extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Category", bundle: nil)
