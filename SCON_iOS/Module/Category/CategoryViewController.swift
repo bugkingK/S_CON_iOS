@@ -9,27 +9,40 @@ import UIKit
 import Tabman
 import Pageboy
 
+
 class CategoryViewController: TabmanViewController {
     
     private var viewControllers: Array<UIViewController> = []
     let years = ["2021", "2020", "2019"]
+    
+    var teamData = [ContestData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "수상작들"
         self.navigationController?.customNavigation()
-        //공통된 스토리보드는 변수로 뽑아내기
+        self.createTabBar() //하단 탭바
+        print("TeamData \(teamData)")
+        //MARK: - 상단 Tabbar
         let storyboard = UIStoryboard.init(name: "Category", bundle: nil)
         let vc1 = storyboard.instantiateViewController(withIdentifier: "TwenyOneViewController") as! Cate2021ViewController
         let vc2 = storyboard.instantiateViewController(withIdentifier: "TwentyViewController") as! Cate2020ViewController
         let vc3 = storyboard.instantiateViewController(withIdentifier: "NineteenViewController") as! Cate2019ViewController
+        
+        
+        
         viewControllers.append(vc1)
         viewControllers.append(vc2)
         viewControllers.append(vc3)
         
         self.dataSource = self
+        
+        
 
-        // Create bar
+    }
+    
+    // Create Tabbar
+    private func createTabBar() {
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .snap // Customize
         bar.layout.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 10.0, right: 10)

@@ -11,7 +11,8 @@ import UIKit
 class Cate2021ViewController: UIViewController {
     
     var arrData = [Header]()
-    
+    var teamData = [ContestData]()
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -21,7 +22,6 @@ class Cate2021ViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.dataSource = self
         collectionView.delegate = self
-        
         //데이터 추가
         arrData.append(Header(header: "대상", dataList: [Data(title: "BOOKREST", discription: "교내 전공 서적 서비스", photo: UIImage(named: "main")),
                                                        Data(title: "title2", discription: "dis2", photo: UIImage(systemName: "house")),

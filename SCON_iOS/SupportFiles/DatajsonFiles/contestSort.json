@@ -1,0 +1,17 @@
+{
+    "contestSort": [
+        {
+            "id": 0,
+            "name": "IT"
+        },
+        {
+            "id": 1,
+            "name": "MEDIA"
+        },
+        {
+            "id": 2,
+            "name": "SW"
+        }
+    ]
+    
+}
