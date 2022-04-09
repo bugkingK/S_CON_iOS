@@ -34,10 +34,10 @@ enum DEPARTMENT: String{
 
 struct Header {
     let header: String
-    let dataList: [Data]
+    let dataList: [DataList]
 }
 
-struct Data{
+struct DataList{
     let title: String
     let discription: String
     let photo: UIImage?
