@@ -1,0 +1,41 @@
+{
+    "teamInfo": [
+        {
+            "id": 0,
+            "name": "BOOKREST",
+            "subTitle": "교내 전공서적 대여서비스",
+            "infoDetail": 0
+        },
+        {
+            "id": 1,
+            "name": "청약 Pass",
+            "subTitle": "청약자격 여부 점검 서비스",
+            "infoDetail": 1
+        },
+        {
+            "id": 2,
+            "name": "Air-Alarm",
+            "subTitle": "실시간 미세먼지 및 공기질 측정기",
+            "infoDetail": 2
+        },
+        {
+            "id": 3,
+            "name": "유저 트레이더스",
+            "subTitle": "중고거래 서비스",
+            "infoDetail": 3
+        },
+        {
+            "id": 4,
+            "name": "GITY",
+            "subTitle": "유튜브 이미지 크롤링 시스템",
+            "infoDetail": 4
+        },
+        {
+            "id": 5,
+            "name": "컴비",
+            "subTitle": "인공지능 수화 번역 시스템",
+            "infoDetail": 5
+        }
+    ]
+    
+}
