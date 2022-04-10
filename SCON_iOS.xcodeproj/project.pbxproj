@@ -24,14 +24,11 @@
 		FC56258C2801707700DF003A /* PrizeList:id=2,year=2021.json in Resources */ = {isa = PBXBuildFile; fileRef = FC5625862801707700DF003A /* PrizeList:id=2,year=2021.json */; };
 		FC56258D2801707700DF003A /* PrizeList:id=2,year=2022.json in Resources */ = {isa = PBXBuildFile; fileRef = FC5625872801707700DF003A /* PrizeList:id=2,year=2022.json */; };
 		FC56258E2801707700DF003A /* PrizeList:id=1,year=2021.json in Resources */ = {isa = PBXBuildFile; fileRef = FC5625882801707700DF003A /* PrizeList:id=1,year=2021.json */; };
-		FCC2C92828015BBF0098B865 /* ContestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2C8FE28015BBF0098B865 /* ContestData.swift */; };
 		FCC2C92928015BBF0098B865 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2C8FF28015BBF0098B865 /* HomeViewController.swift */; };
 		FCC2C92A28015BBF0098B865 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC2C90028015BBF0098B865 /* Home.storyboard */; };
 		FCC2C92B28015BBF0098B865 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2C90228015BBF0098B865 /* MainTableViewCell.swift */; };
-		FCC2C92C28015BBF0098B865 /* Cate2021ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2C90428015BBF0098B865 /* Cate2021ViewController.swift */; };
-		FCC2C92D28015BBF0098B865 /* Cate2020ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2C90528015BBF0098B865 /* Cate2020ViewController.swift */; };
+		FCC2C92C28015BBF0098B865 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2C90428015BBF0098B865 /* CategoryDetailViewController.swift */; };
 		FCC2C92E28015BBF0098B865 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC2C90628015BBF0098B865 /* Category.storyboard */; };
-		FCC2C92F28015BBF0098B865 /* Cate2019ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2C90728015BBF0098B865 /* Cate2019ViewController.swift */; };
 		FCC2C93028015BBF0098B865 /* WorkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2C90928015BBF0098B865 /* WorkCollectionViewCell.swift */; };
 		FCC2C93128015BBF0098B865 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2C90A28015BBF0098B865 /* HeaderCollectionReusableView.swift */; };
 		FCC2C93228015BBF0098B865 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2C90B28015BBF0098B865 /* CategoryViewController.swift */; };
@@ -78,14 +75,11 @@
 		FC5625862801707700DF003A /* PrizeList:id=2,year=2021.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "PrizeList:id=2,year=2021.json"; sourceTree = "<group>"; };
 		FC5625872801707700DF003A /* PrizeList:id=2,year=2022.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "PrizeList:id=2,year=2022.json"; sourceTree = "<group>"; };
 		FC5625882801707700DF003A /* PrizeList:id=1,year=2021.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "PrizeList:id=1,year=2021.json"; sourceTree = "<group>"; };
-		FCC2C8FE28015BBF0098B865 /* ContestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContestData.swift; sourceTree = "<group>"; };
 		FCC2C8FF28015BBF0098B865 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FCC2C90128015BBF0098B865 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		FCC2C90228015BBF0098B865 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
-		FCC2C90428015BBF0098B865 /* Cate2021ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cate2021ViewController.swift; sourceTree = "<group>"; };
-		FCC2C90528015BBF0098B865 /* Cate2020ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cate2020ViewController.swift; sourceTree = "<group>"; };
+		FCC2C90428015BBF0098B865 /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
 		FCC2C90628015BBF0098B865 /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
-		FCC2C90728015BBF0098B865 /* Cate2019ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cate2019ViewController.swift; sourceTree = "<group>"; };
 		FCC2C90928015BBF0098B865 /* WorkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCollectionViewCell.swift; sourceTree = "<group>"; };
 		FCC2C90A28015BBF0098B865 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		FCC2C90B28015BBF0098B865 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -250,7 +244,6 @@
 		FCC2C8FD28015BBF0098B865 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				FCC2C8FE28015BBF0098B865 /* ContestData.swift */,
 				FCC2C8FF28015BBF0098B865 /* HomeViewController.swift */,
 				FCC2C90028015BBF0098B865 /* Home.storyboard */,
 				FCC2C90228015BBF0098B865 /* MainTableViewCell.swift */,
@@ -261,12 +254,10 @@
 		FCC2C90328015BBF0098B865 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				FCC2C90428015BBF0098B865 /* Cate2021ViewController.swift */,
-				FCC2C90528015BBF0098B865 /* Cate2020ViewController.swift */,
-				FCC2C90628015BBF0098B865 /* Category.storyboard */,
-				FCC2C90728015BBF0098B865 /* Cate2019ViewController.swift */,
-				FCC2C90828015BBF0098B865 /* Cell */,
 				FCC2C90B28015BBF0098B865 /* CategoryViewController.swift */,
+				FCC2C90428015BBF0098B865 /* CategoryDetailViewController.swift */,
+				FCC2C90628015BBF0098B865 /* Category.storyboard */,
+				FCC2C90828015BBF0098B865 /* Cell */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -477,16 +468,13 @@
 				FCC2C93A28015BBF0098B865 /* LoginViewController.swift in Sources */,
 				FCC2C93128015BBF0098B865 /* HeaderCollectionReusableView.swift in Sources */,
 				FCC2C93028015BBF0098B865 /* WorkCollectionViewCell.swift in Sources */,
-				FCC2C92D28015BBF0098B865 /* Cate2020ViewController.swift in Sources */,
 				6C7C1C5C2802F14400658058 /* ContestList.swift in Sources */,
 				FCC2C93728015BBF0098B865 /* DetailViewController.swift in Sources */,
 				FCC2C93B28015BBF0098B865 /* SceneDelegate.swift in Sources */,
 				FCC2C93528015BBF0098B865 /* DetailData.swift in Sources */,
 				FCC2C93328015BBF0098B865 /* WebViewController.swift in Sources */,
-				FCC2C92C28015BBF0098B865 /* Cate2021ViewController.swift in Sources */,
+				FCC2C92C28015BBF0098B865 /* CategoryDetailViewController.swift in Sources */,
 				FC56256A2801685700DF003A /* APIKit.swift in Sources */,
-				FCC2C92828015BBF0098B865 /* ContestData.swift in Sources */,
-				FCC2C92F28015BBF0098B865 /* Cate2019ViewController.swift in Sources */,
 				FCC2C92B28015BBF0098B865 /* MainTableViewCell.swift in Sources */,
 				FCC2C94628015BBF0098B865 /* Extenstion.swift in Sources */,
 				FCC2C93828015BBF0098B865 /* EmailLoginViewController.swift in Sources */,

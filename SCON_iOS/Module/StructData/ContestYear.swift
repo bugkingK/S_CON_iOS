@@ -10,5 +10,5 @@ import Foundation
 struct ContestYear: Codable {
     let id: Int
     let name: String
-    let year: [Int]
+    let year: [String]
 }

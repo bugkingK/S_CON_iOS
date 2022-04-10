@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
     
 
     private func bindData() {
+        //리스트 넘겨 받음
         let result = APIKit.shared.request(url: "ContestList", type: ContestList.self)
         switch result{
         case .success(let data):
@@ -52,10 +53,6 @@ class HomeViewController: UIViewController {
         case .failure(let error):
             print("ERROR: \(error.localizedDescription)")
         }
-        
-//        print("loadData", APIKit.shared.request(url: "ContestYear", params: ["id": 0], type: ContestYear.self))
-//        print("loadData", APIKit.shared.request(url: "ContestYear", params: ["id": 1], type: ContestYear.self))
-//        print("loadData", APIKit.shared.request(url: "ContestYear", params: ["id": 2], type: ContestYear.self))
 
     }
     
@@ -119,16 +116,8 @@ extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Category", bundle: nil)
-        guard let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryVC") as? CategoryViewController else { return }
-        //카테고리 VC로 값 전달할 코드
-//        if indexPath.row == 0 {
-//            print(self.IT_Data)
-//            categoryVC.teamData = self.IT_Data
-//        } else if indexPath.row == 1 {
-//            categoryVC.teamData = self.Media_Data
-//        } else {
-//            categoryVC.teamData = self.SW_Data
-//        }
+        guard let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as? CategoryViewController else { return }
+        categoryVC.contestListId = indexPath.row
         self.navigationController?.pushViewController(categoryVC, animated: true)
     }
 }

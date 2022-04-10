@@ -1,5 +1,5 @@
 //
-//  TwentyViewController.swift
+//  TwenyOneViewController.swift
 //  SCON_iOS
 //
 //  Created by 김지인 on 2022/03/23.
@@ -7,10 +7,12 @@
 
 import UIKit
 
-class Cate2019ViewController: UIViewController {
+
+class CategoryDetailViewController: UIViewController {
     
     var arrData = [Header]()
 
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -19,9 +21,8 @@ class Cate2019ViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.dataSource = self
         collectionView.delegate = self
-        
         //데이터 추가
-        arrData.append(Header(header: "대상", dataList: [DataList(title: "BOOKREST", discription: "교내 전공 서적 서비스", photo: UIImage(named: "main")),
+        arrData.append(Header(header: "대상", dataList: [DataList(title: "2021로 잘됨 !!!", discription: "교내 전공 서적 서비스", photo: UIImage(named: "main")),
                                                        DataList(title: "title2", discription: "dis2", photo: UIImage(systemName: "house")),
                                                        DataList(title: "title3", discription: "dis2", photo: UIImage(systemName: "house"))]))
         arrData.append(Header(header: "금상", dataList: [DataList(title: "h1", discription: "d2", photo: UIImage(systemName: "house")),
@@ -40,7 +41,7 @@ class Cate2019ViewController: UIViewController {
 
 
 //MARK: - UICollectionViewDataSource
-extension Cate2019ViewController: UICollectionViewDataSource{
+extension CategoryDetailViewController: UICollectionViewDataSource{
     //섹션 당 보여질 셀의 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrData[section].dataList.count
@@ -52,7 +53,6 @@ extension Cate2019ViewController: UICollectionViewDataSource{
         cell.imageView.image = arrData[indexPath.section].dataList[indexPath.row].photo
         cell.titleLabel.text = arrData[indexPath.section].dataList[indexPath.row].title
         cell.descriptionLabel.text = arrData[indexPath.section].dataList[indexPath.row].discription
-
         return cell
     }
     //섹션의 개수 설정
@@ -84,7 +84,7 @@ extension Cate2019ViewController: UICollectionViewDataSource{
 
 
 //MARK: - UICollectionViewDelegate
-extension Cate2019ViewController: UICollectionViewDelegate{
+extension CategoryDetailViewController: UICollectionViewDelegate{
     //셀 선택시 동작
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)

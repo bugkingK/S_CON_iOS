@@ -13,34 +13,45 @@ import Pageboy
 class CategoryViewController: TabmanViewController {
     
     private var viewControllers: Array<UIViewController> = []
-    let years = ["2021", "2020", "2019"]
+    var contestListId: Int = 0 //경진대회 종류 id 값
+    private var contestYearList: ContestYear = ContestYear(id: 0, name: "실패", year: ["2021","2020","2019"])
     
-    var teamData = [ContestData]()
+//    private let years = ["2021", "2020", "2019"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "수상작들"
-        self.navigationController?.customNavigation()
-        self.createTabBar() //하단 탭바
-        print("TeamData \(teamData)")
-        //MARK: - 상단 Tabbar
-        let storyboard = UIStoryboard.init(name: "Category", bundle: nil)
-        let vc1 = storyboard.instantiateViewController(withIdentifier: "TwenyOneViewController") as! Cate2021ViewController
-        let vc2 = storyboard.instantiateViewController(withIdentifier: "TwentyViewController") as! Cate2020ViewController
-        let vc3 = storyboard.instantiateViewController(withIdentifier: "NineteenViewController") as! Cate2019ViewController
-        
-        
-        
-        viewControllers.append(vc1)
-        viewControllers.append(vc2)
-        viewControllers.append(vc3)
-        
-        self.dataSource = self
-        
-        
+        connectToTapbar()
+        setupLayout()
+        bindData()
+        print("contestListId \(contestListId)")
 
     }
+    private func bindData(){
+        
+        let result = APIKit.shared.request(url: "ContestYear", params: ["id": contestListId], type: ContestYear.self)
+        switch result{
+        case .success(let data):
+            self.contestYearList = data
+        case .failure(let error):
+            print("ERROR: \(error.localizedDescription)")
+        }
+    }
     
+    private func setupLayout(){
+        self.navigationItem.title = "\(contestYearList.name) 수상작들"
+        self.navigationController?.customNavigation()
+        self.dataSource = self
+        self.createTabBar() //하단 탭바
+        
+    }
+    private func connectToTapbar(){
+        let storyboard = UIStoryboard.init(name: "Category", bundle: nil)
+        for _ in contestYearList.year {
+            let vc = storyboard.instantiateViewController(withIdentifier: "CategoryDetailViewController") as! CategoryDetailViewController
+            //해당 년도의 수상작들 뷰컨으로 넘길 코드 작성하기 
+            viewControllers.append(vc)
+        }
+    }
     // Create Tabbar
     private func createTabBar() {
         let bar = TMBar.ButtonBar()
@@ -66,7 +77,7 @@ class CategoryViewController: TabmanViewController {
 extension CategoryViewController: PageboyViewControllerDataSource, TMBarDataSource{
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
             let item = TMBarItem(title: "")
-            item.title = years[index]
+            item.title = contestYearList.year[index]
             return item
         }
         
