@@ -16,20 +16,11 @@ class HomeViewController: UIViewController {
     
     private var contestSortList: [ContestList.ContestSort] = []
     
-//    struct ContestName{
-//        let name: String
-//        let systemImg: String
-//        let imgColor: UIColor
-//    }
-//    private let mainList = [ContestName(name: "IT 부문", systemImg: "tv.circle.fill", imgColor: .blue),
-//                    ContestName(name: "미디어콘텐츠 부문", systemImg: "headphones.circle.fill", imgColor: .orange),
-//                    ContestName(name: "SW 경진대회", systemImg: "wave.3.right.circle.fill", imgColor: .green)]
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLayout()
         bindData()
+        setupLayout()
     }
     
     private func setupLayout() {

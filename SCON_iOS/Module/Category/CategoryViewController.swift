@@ -16,30 +16,31 @@ class CategoryViewController: TabmanViewController {
     var contestListId: Int = 0 //경진대회 종류 id 값
     private var contestYearList: ContestYear = ContestYear(id: 0, name: "실패", year: ["2021","2020","2019"])
     
-//    private let years = ["2021", "2020", "2019"]
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "\(contestYearList.name) 수상작들"
+        self.navigationController?.customNavigation()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindData()
         connectToTapbar()
         setupLayout()
-        bindData()
-        print("contestListId \(contestListId)")
 
     }
     private func bindData(){
-        
+        print("Binding ", APIKit.shared.request(url: "ContestYear", params: ["id": contestListId], type: ContestYear.self))
         let result = APIKit.shared.request(url: "ContestYear", params: ["id": contestListId], type: ContestYear.self)
         switch result{
         case .success(let data):
             self.contestYearList = data
         case .failure(let error):
-            print("ERROR: \(error.localizedDescription)")
+            print("에러: \(error.localizedDescription)")
         }
     }
     
     private func setupLayout(){
-        self.navigationItem.title = "\(contestYearList.name) 수상작들"
-        self.navigationController?.customNavigation()
         self.dataSource = self
         self.createTabBar() //하단 탭바
         
