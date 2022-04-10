@@ -11,7 +11,6 @@ target 'SCON_iOS' do
   pod "youtube-ios-player-helper"
   pod 'JJFloatingActionButton'
   pod 'lottie-ios'
-  pod 'Firebase/Database'
   pod 'Kingfisher'
   pod 'Firebase/Auth'
 
