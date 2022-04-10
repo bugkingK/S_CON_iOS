@@ -2,15 +2,15 @@
     "data": [
         {
             "id": 0,
-            "name": "IT"
+            "name": "IT 경진대회"
         },
         {
             "id": 1,
-            "name": "MEDIA"
+            "name": "MEDIA 경진대회"
         },
         {
             "id": 2,
-            "name": "SW"
+            "name": "SW 경진대회"
         }
     ]
     
