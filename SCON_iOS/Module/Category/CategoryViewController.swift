@@ -12,16 +12,12 @@ import Pageboy
 
 class CategoryViewController: TabmanViewController {
     
+    //MARK: - 변수
     private var viewControllers: Array<UIViewController> = []
     var contestListId: Int = 0 //경진대회 종류 id 값
-    private var contestYearList: ContestYear = ContestYear(id: 0, name: "실패", year: ["2021","2020","2019"])
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.title = "\(contestYearList.name) 수상작들"
-        self.navigationController?.customNavigation()
-    }
-    
+    private var contestYearList: ContestYear = ContestYear(id: 0, name: "실패", year: ["실패","ㅠㅠ"])
+
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         bindData()
@@ -29,8 +25,15 @@ class CategoryViewController: TabmanViewController {
         setupLayout()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "\(contestYearList.name) 수상작들"
+        self.navigationController?.customNavigation()
+    }
+    
+    //MARK: - private func
     private func bindData(){
-        print("Binding ", APIKit.shared.request(url: "ContestYear", params: ["id": contestListId], type: ContestYear.self))
         let result = APIKit.shared.request(url: "ContestYear", params: ["id": contestListId], type: ContestYear.self)
         switch result{
         case .success(let data):
@@ -47,9 +50,11 @@ class CategoryViewController: TabmanViewController {
     }
     private func connectToTapbar(){
         let storyboard = UIStoryboard.init(name: "Category", bundle: nil)
-        for _ in contestYearList.year {
+        for idx in contestYearList.year {
             let vc = storyboard.instantiateViewController(withIdentifier: "CategoryDetailViewController") as! CategoryDetailViewController
-            //해당 년도의 수상작들 뷰컨으로 넘길 코드 작성하기 
+            //해당 년도의 수상작들 뷰컨으로 넘길 코드 작성하기
+            vc.categoryDetailYear = Int(idx) ?? 1000
+            vc.categorySortId = contestListId
             viewControllers.append(vc)
         }
     }
