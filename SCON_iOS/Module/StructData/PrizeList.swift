@@ -27,5 +27,5 @@ struct PrizeListData: Codable {
 struct InfoDetail: Codable {
     let awardDetail, summary, people, calendar: String
     let gitLink, youtubeLink, serviceLink: String
-    let skills: [String]
+    let skills: String
 }
