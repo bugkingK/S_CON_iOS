@@ -21,5 +21,11 @@ struct PrizeListData: Codable {
     let id: Int
     let name, subTitle: String
     let img: String
+    let infoDetail: InfoDetail
 }
 
+struct InfoDetail: Codable {
+    let awardDetail, summary, people, calendar: String
+    let gitLink, youtubeLink, serviceLink: String
+    let skills: [String]
+}

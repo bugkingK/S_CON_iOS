@@ -23,6 +23,15 @@ class CategoryDetailViewController: UIViewController {
         bindData()
     }
     
+
+    //MARK: - private func
+    private func setupLayout(){
+        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        self.collectionView.collectionViewLayout = createLayout()
+    }
+    
     private func bindData(){
         let result = APIKit.shared.request(url: "PrizeList", params: ["id": categorySortId, "year": categoryDetailYear], type: PrizeList.self)
         switch result{
@@ -33,15 +42,6 @@ class CategoryDetailViewController: UIViewController {
         }
         
     }
-    
-    //MARK: - private func
-    private func setupLayout(){
-        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        self.collectionView.collectionViewLayout = createLayout()
-    }
-
     
 }
 
@@ -81,12 +81,6 @@ extension CategoryDetailViewController: UICollectionViewDataSource{
             return UICollectionReusableView()
         }
     }
-//    //섹션의 헤더 사이즈 설정
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        let width: CGFloat = collectionView.frame.width
-//        let height: CGFloat = 20
-//        return CGSize(width: width, height: height)
-//    }
 
 
    
@@ -100,10 +94,8 @@ extension CategoryDetailViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         guard let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
-        //카테고리 VC로 값 전달할 코드
-//        let dataList = prizeListHeader[indexPath.section].prizeListData[indexPath.row]
-//        detailVC.navTitle = dataList.name
-
+        let dataList = prizeListHeader[indexPath.section].prizeListData[indexPath.row]
+        detailVC.detailInfo = dataList
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

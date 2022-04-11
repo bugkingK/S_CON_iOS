@@ -42,7 +42,6 @@
 		FCC2C93F28015BBF0098B865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC2C91C28015BBF0098B865 /* Assets.xcassets */; };
 		FCC2C94028015BBF0098B865 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCC2C91D28015BBF0098B865 /* GoogleService-Info.plist */; };
 		FCC2C94128015BBF0098B865 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC2C91E28015BBF0098B865 /* LaunchScreen.storyboard */; };
-		FCC2C94228015BBF0098B865 /* teamInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = FCC2C92128015BBF0098B865 /* teamInfo.json */; };
 		FCC2C94328015BBF0098B865 /* ContestList.json in Resources */ = {isa = PBXBuildFile; fileRef = FCC2C92228015BBF0098B865 /* ContestList.json */; };
 		FCC2C94428015BBF0098B865 /* infoDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = FCC2C92328015BBF0098B865 /* infoDetail.json */; };
 		FCC2C94628015BBF0098B865 /* Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2C92528015BBF0098B865 /* Extenstion.swift */; };
@@ -89,7 +88,6 @@
 		FCC2C91C28015BBF0098B865 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCC2C91D28015BBF0098B865 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCC2C91F28015BBF0098B865 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FCC2C92128015BBF0098B865 /* teamInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teamInfo.json; sourceTree = "<group>"; };
 		FCC2C92228015BBF0098B865 /* ContestList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ContestList.json; sourceTree = "<group>"; };
 		FCC2C92328015BBF0098B865 /* infoDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = infoDetail.json; sourceTree = "<group>"; };
 		FCC2C92528015BBF0098B865 /* Extenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extenstion.swift; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 		FC56257A28016FB200DF003A /* Prize */ = {
 			isa = PBXGroup;
 			children = (
-				FCC2C92128015BBF0098B865 /* teamInfo.json */,
 				6C7C1C7F2803275800658058 /* PrizeList:id=0,year=2021.json */,
 				6C7C1C83280327D300658058 /* PrizeList:id=0,year=2020.json */,
 				6C7C1C85280327E300658058 /* PrizeList:id=0,year=2019.json */,
@@ -384,7 +381,6 @@
 			files = (
 				FC56257828016DC900DF003A /* ContestYear:id=2.json in Resources */,
 				FC56257928016DC900DF003A /* ContestYear:id=1.json in Resources */,
-				FCC2C94228015BBF0098B865 /* teamInfo.json in Resources */,
 				6C7C1C802803275800658058 /* PrizeList:id=0,year=2021.json in Resources */,
 				FC56257728016DC900DF003A /* ContestYear:id=0.json in Resources */,
 				FCC2C93428015BBF0098B865 /* WebViewController.xib in Resources */,
