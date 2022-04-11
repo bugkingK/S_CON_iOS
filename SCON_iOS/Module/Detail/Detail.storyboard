@@ -95,6 +95,9 @@
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                             <imageReference key="image" image="link.circle" catalog="system" symbolScale="large"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tapServiceLinkBtn:" destination="fY7-AO-oUb" eventType="touchUpInside" id="b3y-sM-6lp"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gC2-AG-ZOV">
                                                         <rect key="frame" x="47" y="0.0" width="40" height="40"/>
@@ -107,6 +110,9 @@
                                                         <state key="normal" image="git_icon">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tapGithubBtn:" destination="fY7-AO-oUb" eventType="touchUpInside" id="QKW-ea-gPN"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -244,6 +250,13 @@ SpringBoot framework</string>
                     </view>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
+                        <outlet property="awardDetailLabel" destination="dyu-r0-Ntp" id="GjX-Wj-9Cm"/>
+                        <outlet property="calendarLabel" destination="alI-mQ-Nvq" id="mCI-3P-quu"/>
+                        <outlet property="devSkillLabel" destination="97g-2K-OHP" id="vtH-P9-aU4"/>
+                        <outlet property="memberInfoLabel" destination="t1I-19-H1k" id="fJP-bW-bst"/>
+                        <outlet property="nameLabel" destination="jqf-A2-e9R" id="ZLw-YE-mgF"/>
+                        <outlet property="subTitleLabel" destination="ZYG-U3-A61" id="nPH-QZ-j4l"/>
+                        <outlet property="summaryLabel" destination="tCD-gi-qj9" id="Lrp-if-H3D"/>
                         <outlet property="titleView" destination="eDM-aj-PKx" id="9dC-u3-JK2"/>
                         <outlet property="youtubeView" destination="sow-7T-30o" id="gdV-QE-LBx"/>
                     </connections>
