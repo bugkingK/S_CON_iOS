@@ -7,20 +7,29 @@
 
 import UIKit
 
-class MainTableViewCell: UITableViewCell {
+// 일반화를 해라.. 어떻게?
+// 프로토콜 사용한다.
+protocol CellProtocol {
+    associatedtype DataType
     
-    @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+    var data: DataType { get }
+}
+
+
+final class MainTableViewCell2: UITableViewCell, CellProtocol {
+    var data: ContestYear?
+}
+
+final class MainTableViewCell: UITableViewCell, CellProtocol {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet private weak var imgView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    
+    public var data: ContestList.ContestSort? {
+        didSet {
+            titleLabel.text = data?.name
+//            let image = UIImage(systemName: data?.systemImg)?.withTintColor(data?.imgColor, renderingMode: .alwaysOriginal)
+//            imgView.image = image
+        }
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        selectionStyle = .none
-        // Configure the view for the selected state
-    }
-    
 }
