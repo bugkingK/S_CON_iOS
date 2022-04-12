@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class CategoryDetailViewController: UIViewController {
-
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var prizeListHeader: [PrizeListHeader] = []
@@ -23,7 +23,7 @@ class CategoryDetailViewController: UIViewController {
         bindData()
     }
     
-
+    
     //MARK: - private func
     private func setupLayout(){
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
@@ -52,7 +52,7 @@ extension CategoryDetailViewController: UICollectionViewDataSource{
     //섹션 당 보여질 셀의 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return prizeListHeader[section].prizeListData.count
-//        return arrData[section].dataList.count
+        //        return arrData[section].dataList.count
     }
     //콜렉션 뷰 셀 설정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -62,7 +62,7 @@ extension CategoryDetailViewController: UICollectionViewDataSource{
         cell.imageView.kf.setImage(with: imageURL)
         cell.titleLabel.text = dataList.name
         cell.descriptionLabel.text = dataList.subTitle
-
+        
         return cell
     }
     //섹션의 개수 설정
@@ -81,10 +81,10 @@ extension CategoryDetailViewController: UICollectionViewDataSource{
             return UICollectionReusableView()
         }
     }
-
-
-   
-   
+    
+    
+    
+    
 }
 
 

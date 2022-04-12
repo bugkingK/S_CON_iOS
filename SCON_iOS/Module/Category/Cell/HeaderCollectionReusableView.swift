@@ -8,6 +8,6 @@
 import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
-        
+    
     @IBOutlet weak var titleLabel: UILabel!
 }

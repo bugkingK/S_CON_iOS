@@ -4,18 +4,22 @@
 //
 //  Created by 김지인 on 2022/03/19.
 //
+
 import UIKit
 import JJFloatingActionButton
 
 
+// 컨트롤러를 계속 생성하고 보여주고
+// 스토리보드를 생성하고, 이름 갖고오고, 뷰컨트롤러 찾고, 그리고 값도 넣고, 캐스팅도하고
+
+
+
 
 class HomeViewController: UIViewController {
-    
     @IBOutlet private weak var mainTitleLabel: UILabel!
     @IBOutlet private weak var mainTableView: UITableView!
     
     private var contestSortList: [ContestList.ContestSort] = []
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +36,6 @@ class HomeViewController: UIViewController {
         configureFloatingButton()
     }
 
-    
-    
-
     private func bindData() {
         //리스트 넘겨 받음
         let result = APIKit.shared.request(url: "ContestList", type: ContestList.self)
@@ -44,7 +45,6 @@ class HomeViewController: UIViewController {
         case .failure(let error):
             print("ERROR: \(error.localizedDescription)")
         }
-
     }
     
     private func urlToWebView(_ url: String, title: String){
@@ -77,14 +77,10 @@ class HomeViewController: UIViewController {
         actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
     }
-    
-    
-   
-
 }
 
 //MARK: - UITableViewDataSource
-extension HomeViewController: UITableViewDataSource{
+extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contestSortList.count
     }
@@ -106,9 +102,8 @@ extension HomeViewController: UITableViewDataSource{
 extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let storyboard = UIStoryboard(name: "Category", bundle: nil)
-        guard let categoryVC = storyboard.instantiateViewController(withIdentifier: "CategoryViewController") as? CategoryViewController else { return }
-        categoryVC.contestListId = indexPath.row
-        self.navigationController?.pushViewController(categoryVC, animated: true)
+        let vc = CategoryViewController.createInstance(sbName: "Category")
+        vc.contestListId = indexPath.row
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -9,21 +9,34 @@ import UIKit
 import Tabman
 import Pageboy
 
+extension UIViewController {
+    var className: String? {
+        return NSStringFromClass(type(of: self) as AnyClass).components(separatedBy: ".").last
+    }
+    
+    static func createInstance(sbName: String) -> Self {
+        let className = String(describing: self)
+        let storyboard = UIStoryboard(name: sbName, bundle: Bundle.main)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: className) as? Self else {
+            fatalError("Class Name와 Storyboard identifier를 확인해주세요.")
+        }
+        return viewController
+    }
+}
 
 class CategoryViewController: TabmanViewController {
-    
     //MARK: - 변수
     private var viewControllers: Array<UIViewController> = []
     var contestListId: Int = 0 //경진대회 종류 id 값
     private var contestYearList: ContestYear = ContestYear(id: 0, name: "실패", year: ["실패","ㅠㅠ"])
-
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         bindData()
         connectToTapbar()
         setupLayout()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,27 +90,27 @@ class CategoryViewController: TabmanViewController {
         // Add to view
         addBar(bar, dataSource: self, at: .top)
     }
-
+    
 }
 //MARK: - TabmanVC- DataSource
 extension CategoryViewController: PageboyViewControllerDataSource, TMBarDataSource{
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
-            let item = TMBarItem(title: "")
-            item.title = contestYearList.year[index]
-            return item
-        }
-        
-        func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
-            return viewControllers.count
-        }
-
-        func viewController(for pageboyViewController: PageboyViewController,
-                            at index: PageboyViewController.PageIndex) -> UIViewController? {
-            return viewControllers[index]
-        }
-
-        func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-            return nil
-        }
+        let item = TMBarItem(title: "")
+        item.title = contestYearList.year[index]
+        return item
+    }
+    
+    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+        return viewControllers.count
+    }
+    
+    func viewController(for pageboyViewController: PageboyViewController,
+                        at index: PageboyViewController.PageIndex) -> UIViewController? {
+        return viewControllers[index]
+    }
+    
+    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
+        return nil
+    }
     
 }
